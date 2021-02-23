@@ -13,7 +13,7 @@ About
 This lesson covers player movement and collision with walls.
 
 Video
-========
+--------
 
 .. raw:: html
 
@@ -21,10 +21,10 @@ Video
 
 
 Code
-========
+--------
 
 Player Code
---------
+^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: gdscript
 
