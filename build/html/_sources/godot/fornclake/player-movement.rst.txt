@@ -3,6 +3,7 @@ Godot Lesson 1: Player Movement
 
 .. toctree::
    :maxdepth: 2
+   :titlesonly:
    :caption: Contents:
 
 
@@ -12,16 +13,18 @@ About
 This lesson covers player movement and collision with walls.
 
 Video
-========
+--------
 
 .. raw:: html
 
    <iframe width="560" height="315" src="https://www.youtube.com/embed/4CLvL05Av6g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+
 Code
-========
+--------
+
 Player Code
-----------
+^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: gdscript
 
