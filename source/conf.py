@@ -47,14 +47,34 @@ exclude_patterns = []
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+
+# html_theme = "classic"
+# html_theme = "bizstyle"
+# html_theme = "pyramid"
+html_theme = "agogo"
+# html_theme = "nature"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+html_css_files = [
+    'css/custom.css',
+]
 
+html_logo = "chibi-header.svg"
 html_theme_options = {
-    'navigation_depth': 4,
-}
+    'rightsidebar': False,
+    'globaltoc_collapse': False,
+    'globaltoc_maxdepth': 4,
+    'bgcolor': '#ffffff',
+    'headerbg': '#ae4cfa',
+    'footerbg': '#6200ad',
+    'linkcolor': "#6200ad",
+    'headercolor1': "#6200ad",
+    'headercolor2': "#6200ad",
+    'headerlinkcolor': "#6200ad",
+ }
+
+

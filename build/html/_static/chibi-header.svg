@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="chibi-header.svg"
+   inkscape:version="1.0 (4035a4f, 2020-05-01)"
+   id="svg2171"
+   version="1.1"
+   viewBox="0 0 105.83286 31.085927"
+   height="31.085928mm"
+   width="105.83286mm">
+  <defs
+     id="defs2165" />
+  <sodipodi:namedview
+     fit-margin-bottom="0"
+     fit-margin-right="0"
+     fit-margin-left="0"
+     fit-margin-top="0"
+     inkscape:window-maximized="0"
+     inkscape:window-y="23"
+     inkscape:window-x="0"
+     inkscape:window-height="801"
+     inkscape:window-width="1252"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="mm"
+     inkscape:cy="98.649288"
+     inkscape:cx="93.46968"
+     inkscape:zoom="2.1076395"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base" />
+  <metadata
+     id="metadata2168">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-26.879074,-112.75569)"
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1">
+    <rect
+       style="display:inline;fill:#6200ad;fill-opacity:1;stroke-width:0.175241;stroke-linecap:round;stroke-linejoin:round"
+       id="rect2133"
+       width="105.83286"
+       height="31.085928"
+       x="26.879074"
+       y="112.75569"
+       ry="0.69558984"
+       inkscape:export-filename="/Users/lis/Desktop/chibi-header.png"
+       inkscape:export-xdpi="110.50171"
+       inkscape:export-ydpi="110.50171" />
+    <g
+       style="display:inline"
+       id="g2163"
+       transform="matrix(0.49999773,0,0,0.49999773,32.921415,113.85171)"
+       inkscape:export-filename="/Users/lis/Desktop/chibi-header.png"
+       inkscape:export-xdpi="110.50171"
+       inkscape:export-ydpi="110.50171">
+      <g
+         transform="matrix(0.44711784,0,0,0.44711784,-26.676158,7.7977181)"
+         inkscape:export-ydpi="110.50171"
+         inkscape:export-xdpi="110.50171"
+         inkscape:export-filename="/Users/lis/Desktop/chibi-header.png"
+         style="display:inline;fill:#199bf7;fill-opacity:1"
+         id="g1344-0">
+        <path
+           inkscape:export-filename="/Users/lis/Desktop/chibi-bot.png"
+           inkscape:connector-curvature="0"
+           id="path12218-9"
+           d="m 77.060197,83.185334 c -2.235684,2e-5 -4.140547,1.81406 -4.140547,4.041853 0,1.098057 0.566342,2.188602 1.399898,2.975521 0.833543,0.786896 1.921411,1.255423 2.912302,1.166215 2.258287,-0.20338 4.067536,-1.808142 4.067536,-4.043081 0,-0.840829 -0.4959,-1.900577 -1.286918,-2.726773 -0.791028,-0.826172 -1.858159,-1.413735 -2.952271,-1.413735 z"
+           style="fill:#199bf7;fill-opacity:1;stroke:none;stroke-width:0.574145;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           inkscape:export-xdpi="300"
+           inkscape:export-ydpi="300" />
+        <g
+           inkscape:export-filename="/Users/lis/Desktop/chibi-bot.png"
+           id="g2898-7"
+           transform="matrix(1.1167366,0,0,1.1167366,-39.667954,-83.121817)"
+           style="fill:#199bf7;fill-opacity:1"
+           inkscape:export-xdpi="300"
+           inkscape:export-ydpi="300">
+          <path
+             style="fill:#199bf7;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.514127;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             d="m 114.3106,128.10271 c -0.0462,-0.001 -0.0894,0.004 -0.13439,0.005 0.0277,1.39847 0.0555,2.77035 0.0698,4.07431 0.86149,0.15642 1.91833,0.3765 2.80724,1.18527 0.92048,0.83747 1.59159,2.29584 1.68114,4.76845 0.0986,-0.006 0.19511,-0.0159 0.29614,-0.0172 h 0.002 0.002 c 0.33738,-0.004 0.67743,0.0128 1.01511,0.0405 0.61037,0.0501 1.3014,0.10852 1.98603,0.24648 0.34328,-2.98702 -0.80174,-5.50426 -2.42823,-7.31134 -1.6748,-1.86077 -3.86456,-2.94502 -5.29682,-2.99202 z"
+             id="path12222-1"
+             inkscape:connector-curvature="0" />
+          <path
+             style="fill:#199bf7;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.514127;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             d="m 119.04911,138.89025 c -0.90266,0.0114 -1.69245,0.19398 -2.27925,0.75914 -0.77453,0.74596 -1.2643,2.24796 -1.10457,5.11863 0.009,0.01 0.007,0.009 0.0423,0.0351 0.057,0.0415 0.1425,0.0922 0.24538,0.1424 0.20578,0.10038 0.48249,0.19982 0.7701,0.26145 0.28762,0.0616 0.58676,0.0848 0.83618,0.0471 0.2247,-0.0339 0.39391,-0.11864 0.51998,-0.25013 0.057,-1.27369 0.31709,-2.23083 0.70254,-2.87954 0.39756,-0.66912 0.95269,-1.03198 1.52047,-0.98992 0.5678,0.0421 1.06682,0.47766 1.38025,1.17651 0.3047,0.67936 0.44453,1.63516 0.34836,2.83427 0.13816,0.30182 0.50562,0.48643 0.95997,0.54443 0.42589,0.0544 0.87411,-0.0274 1.12721,-0.13912 0.42613,-1.58771 0.54711,-2.798 0.44183,-3.6847 -0.10843,-0.91317 -0.43231,-1.49794 -0.87964,-1.90643 -0.89469,-0.81697 -2.37719,-0.92313 -3.6942,-1.03117 -0.32257,-0.0265 -0.63608,-0.0418 -0.93696,-0.038 z"
+             id="path12224-8"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           inkscape:export-filename="/Users/lis/Desktop/chibi-bot.png"
+           inkscape:connector-curvature="0"
+           id="path12226-5"
+           d="m 66.66768,58.302161 c -0.918361,0.74665 -0.06956,12.306279 1.221277,16.561284 0.655382,2.160301 1.651721,3.890493 3.167586,5.085332 1.51587,1.194861 3.565493,1.870059 6.382875,1.870059 2.81985,0 4.819266,-0.640268 6.254819,-1.782788 1.435565,-1.142521 2.3268,-2.804618 2.872371,-4.914063 1.075417,-4.15833 1.180333,-16.090562 0.662626,-16.627355 -0.613349,-0.635966 -19.70236,-0.891019 -20.561554,-0.192404 z m 5.315323,8.707987 v 0 c 0.04343,1.72e-4 0.08579,0.0011 0.123553,0.0043 0.01873,0.001 0.03629,0.0021 0.05583,0.0043 0.01958,0.0021 0.01637,-0.01507 0.109332,0.02883 l 0.009,0.0043 0.009,0.0043 c 0.237296,0.131931 0.391584,0.348371 0.455082,0.57252 0.06343,0.224148 0.04858,0.452858 -0.01016,0.660994 -0.05842,0.208115 -0.160122,0.398431 -0.30094,0.550093 -0.14086,0.151728 -0.333814,0.274961 -0.568861,0.271583 -0.191585,-0.0021 -0.417892,-0.02712 -0.635295,-0.103307 -0.217402,-0.07619 -0.454556,-0.21668 -0.546024,-0.487681 -0.07086,-0.209836 -0.110862,-0.389801 -0.103974,-0.566817 0.0068,-0.176907 0.07694,-0.353191 0.192468,-0.476682 0.231077,-0.246983 0.541931,-0.319554 0.941138,-0.444079 0.09183,-0.02862 0.101428,-0.01937 0.141914,-0.01937 0.04047,-0.0021 0.08419,-0.0021 0.127617,-0.0021 z m -0.0021,0.574154 c -0.0354,0 -0.07169,4.09e-4 -0.09745,0.0011 -0.01099,6.24e-4 -0.02247,0.0043 -0.02976,0.0064 -0.377138,0.119226 -0.60811,0.219824 -0.662623,0.278104 -0.02811,0.02992 -0.03583,0.04003 -0.03834,0.106535 -0.0024,0.0665 0.01657,0.187238 0.07503,0.360875 0.0099,0.02926 0.06158,0.08415 0.191629,0.129774 0.130052,0.04563 0.309828,0.0693 0.453449,0.07146 0.01808,2.15e-4 0.07315,-0.01721 0.140278,-0.08846 0.06713,-0.07232 0.133559,-0.190037 0.168407,-0.314389 0.03484,-0.12418 0.03775,-0.252384 0.01016,-0.349877 -0.02423,-0.08566 -0.0774,-0.144411 -0.159431,-0.199291 -0.01721,-4.3e-4 -0.03196,-0.0011 -0.05138,-0.0011 z m -0.02001,3.577805 v 0 c 0.241099,-0.0043 0.434305,0.130205 0.572937,0.289101 0.138707,0.159044 0.237575,0.357129 0.294405,0.572927 0.05684,0.215777 0.07147,0.451331 0.01016,0.681785 -0.06131,0.230454 -0.210439,0.455742 -0.447755,0.596172 l -0.009,0.0064 -0.009,0.0043 c -0.09458,0.04713 -0.09269,0.02969 -0.11295,0.03228 -0.02023,0.0021 -0.03807,0.0043 -0.05708,0.0043 -0.03807,0.0021 -0.08007,0.0043 -0.123554,0.0043 -0.04346,1.71e-4 -0.08732,-4.32e-4 -0.128048,-0.0021 -0.04074,-0.0021 -0.05015,0.0086 -0.145573,-0.02239 -0.39687,-0.131708 -0.710728,-0.212634 -0.937464,-0.470571 -0.113381,-0.128911 -0.17906,-0.306943 -0.185539,-0.487681 -0.0064,-0.180783 0.03212,-0.367719 0.101944,-0.588036 0.08701,-0.274488 0.322128,-0.427528 0.540304,-0.50888 0.218027,-0.08135 0.444113,-0.107606 0.63613,-0.110626 z m 0.0095,0.574132 c -0.141054,0.0021 -0.317701,0.0269 -0.44489,0.07425 -0.127172,0.04756 -0.179706,0.10115 -0.193264,0.14441 -0.05895,0.185732 -0.07855,0.317058 -0.07584,0.393932 0.0026,0.07683 0.01378,0.09577 0.04322,0.129343 0.05733,0.06521 0.284692,0.169159 0.662623,0.29603 0.0047,0.0011 0.01058,0.0021 0.01915,0.0043 0.02508,0.0011 0.06095,0.0021 0.09582,0.0011 0.01701,0 0.02938,-8.39e-4 0.04489,-0.0011 0.08096,-0.05832 0.136689,-0.122677 0.162274,-0.218983 0.02926,-0.109973 0.02556,-0.252256 -0.01016,-0.388187 -0.03586,-0.136022 -0.104086,-0.263769 -0.172067,-0.341721 -0.068,-0.07791 -0.121271,-0.09233 -0.131707,-0.09212 z m -0.0082,1.037775 c -0.0082,-0.0021 -0.0086,-0.0021 0.02366,0.0086 -0.0088,-0.0043 -0.01507,-0.0064 -0.02366,-0.0086 z"
+           style="fill:#199bf7;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.574145;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           sodipodi:nodetypes="sssssssscscssccscscsssssccccccccssscssccccssssccccccccsssscccccccccccscsccccc"
+           inkscape:export-xdpi="300"
+           inkscape:export-ydpi="300" />
+        <path
+           inkscape:export-filename="/Users/lis/Desktop/chibi-bot.png"
+           inkscape:connector-curvature="0"
+           id="path12228-0"
+           d="m 73.982538,19.19287 c -6.484068,0.0043 -10.739996,1.710454 -13.677455,4.330092 -2.941393,2.623147 -4.50539,6.207773 -5.222455,9.87698 -1.369295,7.007173 0.160251,15.167068 0.975388,15.230492 10.965219,0.853183 22.87018,-0.251631 40.355503,-5.375917 0.868333,-0.254473 0.125669,-11.188616 -2.849653,-15.847131 -4.06827,-6.369766 -9.197113,-8.205349 -19.581328,-8.215464 z"
+           style="display:inline;fill:#199bf7;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.44177;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           sodipodi:nodetypes="cssssscc"
+           inkscape:export-xdpi="300"
+           inkscape:export-ydpi="300" />
+        <path
+           inkscape:export-filename="/Users/lis/Desktop/chibi-bot.png"
+           inkscape:connector-curvature="0"
+           id="path12234-4"
+           d="m 98.167935,43.5182 c -0.02374,0.0086 -0.04436,0.01721 -0.05824,0.02153 -18.887997,6.365934 -28.672731,7.011993 -43.210358,5.700464 -0.905561,-0.08178 1.545628,6.839067 3.457748,7.640598 1.457351,0.429788 36.585114,-0.753538 37.975359,-1.744073 1.201084,-0.915186 3.084552,-11.766925 1.835489,-11.616423 z"
+           style="display:inline;fill:#199bf7;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.29365;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           sodipodi:nodetypes="ccscccc"
+           inkscape:export-xdpi="300"
+           inkscape:export-ydpi="300" />
+        <g
+           inkscape:export-filename="/Users/lis/Desktop/chibi-bot.png"
+           id="g2894-2"
+           transform="matrix(1.1167366,0,0,1.1167366,-39.667954,-83.023528)"
+           style="fill:#199bf7;fill-opacity:1"
+           inkscape:export-xdpi="300"
+           inkscape:export-ydpi="300">
+          <path
+             style="fill:#199bf7;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.514127;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             d="m 89.819087,139.06698 c -0.300867,-0.004 -0.614017,0.0115 -0.93659,0.038 -1.317006,0.10804 -2.799879,0.2142 -3.694553,1.03117 -0.447347,0.40849 -0.770854,0.99362 -0.879288,1.9068 -0.105293,0.88677 0.01552,2.09679 0.441831,3.6847 0.2531,0.1117 0.701326,0.19312 1.12721,0.13875 0.454581,-0.058 0.821986,-0.2427 0.959977,-0.5448 -0.09606,-1.19873 0.04335,-2.15469 0.34798,-2.8339 0.313431,-0.69885 0.81247,-1.13408 1.380253,-1.17614 0.567783,-0.0421 1.123265,0.3208 1.520844,0.98991 0.385408,0.64865 0.645145,1.60532 0.702166,2.87882 0.126083,0.13171 0.295427,0.21654 0.520334,0.25049 0.249436,0.0377 0.548583,0.0145 0.836195,-0.0471 0.287612,-0.0616 0.564306,-0.16107 0.770087,-0.26145 0.1029,-0.0502 0.188058,-0.10088 0.245024,-0.1424 0.03524,-0.0257 0.033,-0.0255 0.04234,-0.0351 0.159735,-2.87066 -0.329677,-4.37231 -1.104195,-5.11826 -0.586796,-0.56516 -1.376963,-0.74812 -2.27962,-0.75951 z"
+             id="path12220-6"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path12240-0"
+             d="m 94.465243,128.36711 c 0.0462,-0.001 0.08944,0.004 0.134383,0.005 -0.02769,1.39846 -0.05554,2.77034 -0.06975,4.0743 -0.86149,0.15642 -1.918329,0.3765 -2.807245,1.18527 -0.920474,0.83747 -1.591588,2.29584 -1.681139,4.76846 -0.09858,-0.006 -0.195107,-0.0159 -0.296137,-0.0172 h -0.0019 -0.0022 c -0.33738,-0.004 -0.677432,0.0128 -1.015111,0.0405 -0.610372,0.0501 -1.301395,0.10853 -1.986026,0.24648 -0.343287,-2.98702 0.801739,-5.50426 2.428231,-7.31134 1.674801,-1.86076 3.864552,-2.94501 5.296816,-2.99201 z"
+             style="fill:#199bf7;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.514127;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           sodipodi:nodetypes="sssssssssss"
+           id="path1211-9"
+           d="m 73.829752,2.9859848 c -1.293772,8e-7 -2.383532,1.0087893 -2.383532,2.2775354 -10e-7,1.2687457 1.08976,2.2775347 2.383532,2.2775347 1.140104,0 1.965309,-0.8472589 2.215024,-1.894322 0.06346,-0.2660972 0.04998,-0.5440514 -1e-4,-0.7664179 -0.236494,-1.0501143 -1.07482,-1.8943303 -2.214924,-1.8943302 z m 0,1.0517973 c 0.757564,0 1.331732,0.5598236 1.331732,1.2257381 0,0.6659147 -0.574168,1.2257377 -1.331732,1.2257377 -0.757565,0 -1.331735,-0.559823 -1.331735,-1.2257377 0,-0.6659141 0.57417,-1.2257375 1.331735,-1.2257381 z"
+           style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:0.98;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#199bf7;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.052;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate;stop-color:#000000" />
+        <path
+           id="path1215-9"
+           d="m 73.870518,6.5626389 a 0.52600144,0.52600144 0 0 0 -0.502797,0.549001 l 0.07337,1.7122277 -3.090165,1.4649074 a 0.52605404,0.52605404 0 0 0 0.02446,0.962109 l 4.465383,1.842684 -4.734448,1.93509 a 0.52605404,0.52605404 0 0 0 -0.07066,0.940366 l 3.348358,2.008471 0.07337,1.247481 a 0.52600144,0.52600144 0 0 0 0.557155,0.491926 0.52600144,0.52600144 0 0 0 0.491926,-0.554436 l -0.08968,-1.524698 a 0.52605404,0.52605404 0 0 0 -0.252756,-0.421263 l -2.68521,-1.608952 4.94372,-2.024777 a 0.52605404,0.52605404 0 0 0 0.0028,-0.972981 L 71.872992,10.73178 74.207601,9.6256256 A 0.52605404,0.52605404 0 0 0 74.50928,9.1282636 L 74.4196,7.0654379 a 0.52600144,0.52600144 0 0 0 -0.549001,-0.502799 z"
+           style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:0.98;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#199bf7;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.052;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate;stop-color:#000000" />
+      </g>
+      <g
+         style="display:inline"
+         inkscape:export-ydpi="110.50171"
+         inkscape:export-xdpi="110.50171"
+         transform="matrix(0.98626827,0,0,1.0089633,-49.83499,-142.89199)"
+         id="g3273-8"
+         inkscape:export-filename="/Users/lis/Desktop/chibi-header.png">
+        <path
+           id="ellipse3183-9"
+           style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.100908;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.815686"
+           d="m 64.645818,165.32509 c -3e-6,3.3854 -0.0019,3.4168 -2.839738,3.40768 -2.871315,-0.009 -2.865729,-0.0557 -2.839739,-3.40768 0.02625,-3.38535 0.01857,-3.40769 2.839739,-3.40769 2.787762,0 2.83974,0.0223 2.839738,3.40769"
+           sodipodi:nodetypes="csssc" />
+        <path
+           id="ellipse3185-2"
+           style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0538342;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.815686"
+           d="m 63.202347,165.32504 c -1e-6,1.62218 -0.239728,1.97249 -1.396329,1.97249 -1.1566,0 -1.411645,-0.27098 -1.396328,-1.97249 0.01511,-1.67883 0.273879,-1.9648 1.396328,-1.9725 1.168132,-0.008 1.407666,0.21429 1.396329,1.9725"
+           sodipodi:nodetypes="csssc" />
+        <ellipse
+           ry="1.5702085"
+           rx="1.1115484"
+           cy="165.32509"
+           cx="61.80608"
+           id="ellipse3187-2"
+           style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0428547;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.815686" />
+        <circle
+           style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.105833;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.815686"
+           id="path3218-8"
+           cx="62.649406"
+           cy="166.88116"
+           r="0.50113034" />
+        <ellipse
+           style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.105833;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.815686"
+           id="path3220-7"
+           cx="60.866917"
+           cy="163.82417"
+           rx="0.76839989"
+           ry="0.89617896" />
+      </g>
+      <g
+         style="display:inline"
+         inkscape:export-ydpi="110.50171"
+         inkscape:export-xdpi="110.50171"
+         id="g3292-1"
+         transform="matrix(0.97027067,0,0,0.968942,-56.993512,-135.25706)"
+         inkscape:export-filename="/Users/lis/Desktop/chibi-header.png">
+        <path
+           sodipodi:nodetypes="csssc"
+           d="m 64.645818,165.32509 c -3e-6,3.3854 -0.0019,3.4168 -2.839738,3.40768 -2.871315,-0.009 -2.865729,-0.0557 -2.839739,-3.40768 0.02625,-3.38535 0.01857,-3.40769 2.839739,-3.40769 2.787762,0 2.83974,0.0223 2.839738,3.40769"
+           style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.100908;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.815686"
+           id="path3282-2" />
+        <path
+           sodipodi:nodetypes="csssc"
+           d="m 63.202347,165.32504 c -1e-6,1.62218 -0.239728,1.97249 -1.396329,1.97249 -1.1566,0 -1.411645,-0.27098 -1.396328,-1.97249 0.01511,-1.67883 0.273879,-1.9648 1.396328,-1.9725 1.168132,-0.008 1.407666,0.21429 1.396329,1.9725"
+           style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0538342;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.815686"
+           id="path3284-6" />
+        <ellipse
+           style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0428547;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.815686"
+           id="ellipse3286-9"
+           cx="61.80608"
+           cy="165.32509"
+           rx="1.1115484"
+           ry="1.5702085" />
+        <circle
+           r="0.50113034"
+           cy="166.88116"
+           cx="62.649406"
+           id="circle3288-5"
+           style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.105833;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.815686" />
+        <ellipse
+           ry="0.89617896"
+           rx="0.76839989"
+           cy="163.82417"
+           cx="60.866917"
+           id="ellipse3290-8"
+           style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.105833;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.815686" />
+      </g>
+      <path
+         inkscape:export-ydpi="110.50171"
+         inkscape:export-xdpi="110.50171"
+         sodipodi:nodetypes="cc"
+         id="path3334-5"
+         d="m -0.54910206,21.240542 c 0,-0.514372 0.83585459,-1.864593 1.47882063,-1.928893"
+         style="display:inline;fill:none;stroke:#ffffff;stroke-width:0.1273;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:export-filename="/Users/lis/Desktop/chibi-header.png" />
+      <path
+         inkscape:export-ydpi="110.50171"
+         inkscape:export-xdpi="110.50171"
+         sodipodi:nodetypes="ccc"
+         id="path3336-8"
+         d="m 3.6031898,35.257186 0.032149,-0.835858 c 0.3857786,-0.160737 0.9644474,-0.128597 1.4788206,-0.09645"
+         style="display:inline;fill:none;stroke:#ffffff;stroke-width:0.1273;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:export-filename="/Users/lis/Desktop/chibi-header.png" />
+      <path
+         inkscape:export-ydpi="110.50171"
+         inkscape:export-xdpi="110.50171"
+         sodipodi:nodetypes="cc"
+         id="path3358-3"
+         d="M 6.3949173,46.642826 C 6.3494554,46.165453 7.119596,45.44601 7.4833117,45.44601"
+         style="display:inline;fill:none;stroke:#ffffff;stroke-width:0.1273;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:export-filename="/Users/lis/Desktop/chibi-header.png" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.68656px;line-height:1.25;font-family:'Architects Daughter';-inkscape-font-specification:'Architects Daughter, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;display:inline;fill:#ffffff;fill-opacity:1;stroke-width:0.177705"
+       x="44.664646"
+       y="125.99404"
+       id="text12043-1"
+       inkscape:export-filename="/Users/lis/Desktop/chibi-header.png"
+       inkscape:export-xdpi="110.50171"
+       inkscape:export-ydpi="110.50171"><tspan
+         sodipodi:role="line"
+         id="tspan12041-1"
+         x="44.664646"
+         y="125.99404"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.68656px;font-family:'Architects Daughter';-inkscape-font-specification:'Architects Daughter, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.177705">Los Alamos STEAM Lab</tspan><tspan
+         sodipodi:role="line"
+         x="44.664646"
+         y="133.10225"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.68656px;font-family:'Architects Daughter';-inkscape-font-specification:'Architects Daughter, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.177705"
+         id="tspan2073"
+         dx="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2.8155336e-09">http://lasteamlab.com</tspan></text>
+  </g>
+</svg>

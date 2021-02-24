@@ -7,6 +7,7 @@ Top Down RPG
    :caption: Contents:
 
    fornclake/player-movement
+   fornclake/animations
 
 
 About
