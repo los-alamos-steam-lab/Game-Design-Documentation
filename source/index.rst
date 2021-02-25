@@ -9,7 +9,6 @@ Everything Game Design with STEAM Lab!
 .. toctree::
    :maxdepth: 5
    :titlesonly:
-   :includehidden:
 
    godot/godot
    assets/assets 
@@ -17,7 +16,7 @@ Everything Game Design with STEAM Lab!
 
 
 Game Design
---------
+------------
 
 This is a collection of tutorials and projects for game design. 
 In addition to the resources collected, there will be a few recommended 

@@ -3,14 +3,21 @@ Godot Lesson 2: Walk and Push Animations
 
 .. toctree::
    :maxdepth: 2
-   :titlesonly:
    :caption: Contents:
 
 
-About
+Summary
 --------
 
-This lesson covers animations for the player.
+This lesson covers animations for the player.  We'll import 
+a spritesheet and make use of the animation player.
+
+Prerequisites
+--------------
+
+* Know how to create a scene and import assets in Godot
+* A player that has movement
+
 
 Video
 --------
@@ -29,6 +36,11 @@ Code
 
 Player Code
 ^^^^^^^^^^^^^^^^^^^^
+
+Major Changes from the Video:  
+
+* I've used the enums for Vector2 instead of Vector2(0,1), etc.
+* I changed the order of the movement if statement to prioritize idle 
 
 .. code-block:: gdscript
 

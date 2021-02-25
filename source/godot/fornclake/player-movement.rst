@@ -1,16 +1,15 @@
 Godot Lesson 1: Player Movement
 =======================================
 
-.. toctree::
-   :maxdepth: 2
-   :titlesonly:
-   :caption: Contents:
-
-
-About
+Summary
 --------
 
 This lesson covers player movement and collision with walls.
+
+Prerequisites
+--------------
+
+* Godot Installed
 
 Video
 --------

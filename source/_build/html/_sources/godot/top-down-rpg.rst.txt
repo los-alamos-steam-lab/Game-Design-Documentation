@@ -2,15 +2,14 @@ Top Down RPG
 =======================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :titlesonly:
-   :caption: Contents:
+   :caption: Lessons:
 
    fornclake/player-movement
    fornclake/animations
 
-
-About
+Summary
 --------
 
 This tutorial relies heavily on a video series made by fornclake 
@@ -24,3 +23,7 @@ At the end I have a very small but pretty functional base game
 that has a sword, enemy, enemy drops, pickups, health, locked 
 doors, save games, and teleporting. It would make a great 
 template for almost any real time RPG.
+
+|
+
+
