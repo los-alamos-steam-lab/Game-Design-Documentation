@@ -1,17 +1,11 @@
 Godot Game Engine
 =======================================
 
-The Godot Game Engine is a free and open source engine that handles 
-both 2D and 3D game design. It runs on Windows, MacOS, and Linux 
-and is well-documented and under active development. 
-Most of the coding tutorials will be centered around Godot.
-
-|
-
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :caption: Contents:
    
+   getting-started 
    top-down-rpg
 
 
