@@ -1,11 +1,6 @@
 Godot Lesson 2: Walk and Push Animations
 ===================================================
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-
 Summary
 --------
 
@@ -33,6 +28,8 @@ Spritesheet: https://sprites.retro-dragon.com/index.php/2018/08/27/zlg-player-sp
 
 Code
 --------
+
+Repository: https://github.com/los-alamos-steam-lab/godot-tutorial/tree/2-walk-and-push-animations
 
 Player Code
 ^^^^^^^^^^^^^^^^^^^^

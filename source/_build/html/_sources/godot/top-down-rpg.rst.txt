@@ -3,7 +3,6 @@ Top Down RPG
 
 .. toctree::
    :maxdepth: 1
-   :titlesonly:
    :caption: Lessons:
 
    fornclake/player-movement
@@ -23,7 +22,4 @@ At the end I have a very small but pretty functional base game
 that has a sword, enemy, enemy drops, pickups, health, locked 
 doors, save games, and teleporting. It would make a great 
 template for almost any real time RPG.
-
-|
-
 

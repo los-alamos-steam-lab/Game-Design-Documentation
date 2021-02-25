@@ -3,7 +3,6 @@ Godot Game Engine
 
 .. toctree::
    :maxdepth: 3
-   :titlesonly:
    :caption: Contents:
    
    top-down-rpg
