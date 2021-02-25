@@ -7,6 +7,8 @@ Top Down RPG
 
    fornclake/player-movement
    fornclake/animations
+   fornclake/entity-class
+   
 
 Summary
 --------
