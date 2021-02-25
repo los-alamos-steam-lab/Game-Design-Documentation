@@ -1,18 +1,6 @@
 Top Down RPG
 =======================================
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Lessons:
-
-   fornclake/player-movement
-   fornclake/animations
-   fornclake/entity-class
-   
-
-Summary
---------
-
 This tutorial relies heavily on a video series made by fornclake 
 a couple of years ago. Along with his videos, I’ve provided the 
 code (updated for Godot 3.1) and lot of comments. 
@@ -24,4 +12,17 @@ At the end I have a very small but pretty functional base game
 that has a sword, enemy, enemy drops, pickups, health, locked 
 doors, save games, and teleporting. It would make a great 
 template for almost any real time RPG.
+
+|
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Lessons:
+
+   fornclake/player-movement
+   fornclake/animations
+   fornclake/entity-class
+   fornclake/knockback
+
+
 
