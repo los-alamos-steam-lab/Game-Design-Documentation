@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Godot Lesson 4: Knockback &#8212; Game Design 0.1 documentation</title>
+    <title>Godot Lesson 6: Enemy Health &#8212; Game Design 0.1 documentation</title>
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/agogo.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
@@ -15,8 +15,8 @@
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Godot Lesson 5: Item Setup" href="items.html" />
-    <link rel="prev" title="Godot Lesson 3: Entity Class" href="entity-class.html" /> 
+    <link rel="next" title="Asset Creation" href="../../assets/assets.html" />
+    <link rel="prev" title="Godot Lesson 5: Item Setup" href="items.html" /> 
   </head><body>
     <div class="header-wrapper" role="banner">
       <div class="header">
@@ -26,9 +26,9 @@
         <div class="headertitle"><a
           href="../../index.html">Game Design 0.1 documentation</a></div>
         <div class="rel" role="navigation" aria-label="related navigation">
-          <a href="entity-class.html" title="Godot Lesson 3: Entity Class"
-             accesskey="P">previous</a> |
           <a href="items.html" title="Godot Lesson 5: Item Setup"
+             accesskey="P">previous</a> |
+          <a href="../../assets/assets.html" title="Asset Creation"
              accesskey="N">next</a> |
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a>
@@ -48,20 +48,21 @@
 <li class="toctree-l3"><a class="reference internal" href="player-movement.html">Godot Lesson 1: Player Movement</a></li>
 <li class="toctree-l3"><a class="reference internal" href="animations.html">Godot Lesson 2: Walk and Push Animations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="entity-class.html">Godot Lesson 3: Entity Class</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Godot Lesson 4: Knockback</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="knockback.html">Godot Lesson 4: Knockback</a></li>
+<li class="toctree-l3"><a class="reference internal" href="items.html">Godot Lesson 5: Item Setup</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Godot Lesson 6: Enemy Health</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#summary">Summary</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#video">Video</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sprites">Sprites</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#code">Code</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#item-code">Item Code</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#entity-code">Entity Code</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#player-code">Player Code</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#stalfos-code">Stalfos Code</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="items.html">Godot Lesson 5: Item Setup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="items2.html">Godot Lesson 6: Enemy Health</a></li>
 </ul>
 </li>
 </ul>
@@ -84,32 +85,71 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="godot-lesson-4-knockback">
-<h1>Godot Lesson 4: Knockback<a class="headerlink" href="#godot-lesson-4-knockback" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="godot-lesson-6-enemy-health">
+<h1>Godot Lesson 6: Enemy Health<a class="headerlink" href="#godot-lesson-6-enemy-health" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
-<p>This lesson creates knockback forcing the entity away from the
-attacker when hit.  Entities also do not get damage while being
-knocked back.</p>
+<p>This lesson creates a sword item that is setup to be used by both entities and players.
+This sets the framework for adding other weapons and items as well.</p>
 </div>
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>An entity class with one enemy (Lessons 1, 2, 3)</p></li>
+<li><p>Everything will make more sense with Lesson 4 (knockback)</p></li>
 </ul>
 </div>
 <div class="section" id="video">
 <h2>Video<a class="headerlink" href="#video" title="Permalink to this headline">¶</a></h2>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/vp57qbgenOE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ikAJGfuc_Vg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="section" id="sprites">
+<h2>Sprites<a class="headerlink" href="#sprites" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Stalfos Hurt Sprite: <a class="reference external" href="https://sprites.retro-dragon.com/index.php/2018/08/28/stalfaux-hurt/">https://sprites.retro-dragon.com/index.php/2018/08/28/stalfaux-hurt/</a></p></li>
+<li><p>Player Hurt Sprite: <a class="reference external" href="https://sprites.retro-dragon.com/index.php/2018/08/27/zlg-player-hurt/">https://sprites.retro-dragon.com/index.php/2018/08/27/zlg-player-hurt/</a></p></li>
+<li><p>Enemy Death Sprite: <a class="reference external" href="https://sprites.retro-dragon.com/index.php/2018/08/29/zlg-enemy-death/">https://sprites.retro-dragon.com/index.php/2018/08/29/zlg-enemy-death/</a></p></li>
+</ul>
+</div>
 <div class="section" id="code">
 <h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
-<p>Repository: <a class="reference external" href="https://github.com/los-alamos-steam-lab/godot-tutorial/tree/4-knockback">https://github.com/los-alamos-steam-lab/godot-tutorial/tree/4-knockback</a></p>
+<p>Repository: <a class="reference external" href="https://github.com/los-alamos-steam-lab/godot-tutorial/blob/6-enemy-health/README.md">https://github.com/los-alamos-steam-lab/godot-tutorial/blob/6-enemy-health/README.md</a></p>
+<div class="section" id="item-code">
+<h3>Item Code<a class="headerlink" href="#item-code" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">extends</span> <span class="n">Node2D</span>
+
+<span class="k">var</span> <span class="n">TYPE</span> <span class="o">=</span> <span class="nb nb-Type">null</span>
+<span class="k">var</span> <span class="n">DAMAGE</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1">#number of the item that can be owned by a single entity on the screen</span>
+<span class="k">var</span> <span class="n">maxamount</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># Called when the node enters the scene tree for the first time.</span>
+<span class="k">func</span> <span class="n">_ready</span><span class="p">():</span>
+    <span class="c1"># find out who is holding the sword</span>
+    <span class="n">TYPE</span> <span class="o">=</span> <span class="n">get_parent</span><span class="p">()</span><span class="o">.</span><span class="n">TYPE</span>
+
+    <span class="c1"># when the animation finsishes, call the function &quot;destroy&quot;</span>
+    <span class="o">$</span><span class="n">anim</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;animation_finished&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;destroy&quot;</span><span class="p">)</span>
+
+    <span class="c1">#animate the sword</span>
+    <span class="o">$</span><span class="n">anim</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="s2">&quot;swing&quot;</span><span class="p">,</span> <span class="n">get_parent</span><span class="p">()</span><span class="o">.</span><span class="n">spritedir</span><span class="p">))</span>
+
+    <span class="c1"># if the parent has a state definted for swing, then set it</span>
+    <span class="k">if</span> <span class="n">get_parent</span><span class="p">()</span><span class="o">.</span><span class="n">has_method</span><span class="p">(</span><span class="s2">&quot;state_swing&quot;</span><span class="p">):</span>
+        <span class="n">get_parent</span><span class="p">()</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;swing&quot;</span>
+
+<span class="k">func</span> <span class="n">destroy</span><span class="p">(</span><span class="n">animation</span><span class="p">):</span>
+    <span class="c1"># if the parent has a state definted for swing, then unset it</span>
+    <span class="k">if</span> <span class="n">get_parent</span><span class="p">()</span><span class="o">.</span><span class="n">has_method</span><span class="p">(</span><span class="s2">&quot;state_swing&quot;</span><span class="p">):</span>
+        <span class="n">get_parent</span><span class="p">()</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;default&quot;</span>
+
+    <span class="c1">#delete the item</span>
+    <span class="n">queue_free</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="entity-code">
 <h3>Entity Code<a class="headerlink" href="#entity-code" title="Permalink to this headline">¶</a></h3>
-<p>Major Changes from the Video:</p>
-<ul class="simple">
-<li><p>Declared DAMAGE because otherwise the references in entity fail.</p></li>
-</ul>
 <div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">class_name</span> <span class="n">entity</span>
 <span class="k">extends</span> <span class="n">KinematicBody2D</span>
 
@@ -175,8 +215,10 @@ knocked back.</p>
     <span class="k">if</span> <span class="n">hitstun</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">hitstun</span> <span class="o">-=</span> <span class="mi">1</span>
 
-    <span class="c1"># for any body that is overlapping the entity&#39;s hitbox</span>
-    <span class="k">for</span> <span class="n">body</span> <span class="ow">in</span> <span class="o">$</span><span class="n">hitbox</span><span class="o">.</span><span class="n">get_overlapping_bodies</span><span class="p">():</span>
+    <span class="c1"># for any area that is overlapping the entity&#39;s hitbox</span>
+    <span class="k">for</span> <span class="n">area</span> <span class="ow">in</span> <span class="o">$</span><span class="n">hitbox</span><span class="o">.</span><span class="n">get_overlapping_areas</span><span class="p">():</span>
+        <span class="c1"># Body is the area&#39;s parent - a weapon or an entity</span>
+        <span class="k">var</span> <span class="n">body</span> <span class="o">=</span> <span class="n">area</span><span class="o">.</span><span class="n">get_parent</span><span class="p">()</span>
         <span class="c1"># if the entity isn&#39;t already hit, and the body gives damage,</span>
         <span class="c1"># and the body is a different type that the entity</span>
         <span class="k">if</span> <span class="n">hitstun</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">body</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;DAMAGE&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="nb nb-Type">null</span> <span class="ow">and</span> <span class="n">body</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;TYPE&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="n">TYPE</span><span class="p">:</span>
@@ -186,17 +228,30 @@ knocked back.</p>
             <span class="n">hitstun</span> <span class="o">=</span> <span class="mi">10</span>
             <span class="c1"># set knockdir to the opposite of the entity approached</span>
             <span class="c1"># the body from</span>
-            <span class="n">knockdir</span> <span class="o">=</span> <span class="n">transform</span><span class="o">.</span><span class="n">origin</span> <span class="o">-</span> <span class="n">body</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">origin</span>
+            <span class="n">knockdir</span> <span class="o">=</span> <span class="n">global_transform</span><span class="o">.</span><span class="n">origin</span> <span class="o">-</span> <span class="n">body</span><span class="o">.</span><span class="n">global_transform</span><span class="o">.</span><span class="n">origin</span>
+
+<span class="c1"># Accepts an actual item scene not the name of the scene</span>
+<span class="k">func</span> <span class="n">use_item</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+    <span class="c1"># create an instance of the item</span>
+    <span class="k">var</span> <span class="n">newitem</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">instance</span><span class="p">()</span>
+
+    <span class="c1"># add it to the group with item name and the id of its parent</span>
+    <span class="n">newitem</span><span class="o">.</span><span class="n">add_to_group</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">newitem</span><span class="o">.</span><span class="n">get_name</span><span class="p">(),</span> <span class="bp">self</span><span class="p">))</span>
+
+    <span class="c1"># make it a child of the entity</span>
+    <span class="n">add_child</span><span class="p">(</span><span class="n">newitem</span><span class="p">)</span>
+
+    <span class="c1"># if there are already too many items of that type on the screen, delete it</span>
+    <span class="k">if</span> <span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">get_nodes_in_group</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">newitem</span><span class="o">.</span><span class="n">get_name</span><span class="p">(),</span> <span class="bp">self</span><span class="p">))</span><span class="o">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">newitem</span><span class="o">.</span><span class="n">maxamount</span><span class="p">:</span>
+        <span class="n">newitem</span><span class="o">.</span><span class="n">queue_free</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="player-code">
 <h3>Player Code<a class="headerlink" href="#player-code" title="Permalink to this headline">¶</a></h3>
-<p>Major Changes from the Video:</p>
-<ul class="simple">
-<li><p>The _ready func is used to set TYPE and other “constants”</p></li>
-</ul>
 <div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">extends</span> <span class="n">entity</span>
+
+<span class="k">var</span> <span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;default&quot;</span>
 
 <span class="c1"># ready function lets us set &quot;constants&quot; when the file loads</span>
 <span class="k">func</span> <span class="n">_ready</span><span class="p">():</span>
@@ -205,16 +260,19 @@ knocked back.</p>
 
 <span class="c1"># _physics_process is called by the game engine</span>
 <span class="k">func</span> <span class="n">_physics_process</span><span class="p">(</span><span class="n">delta</span><span class="p">):</span>
+    <span class="c1"># making things neater with a state engine</span>
+    <span class="c1"># this lets us break each state out in to its own function</span>
+    <span class="k">match</span> <span class="n">state</span><span class="p">:</span>
+        <span class="s2">&quot;default&quot;</span><span class="p">:</span>
+            <span class="n">state_default</span><span class="p">()</span>
+        <span class="s2">&quot;swing&quot;</span><span class="p">:</span>
+            <span class="n">state_swing</span><span class="p">()</span>
+
+<span class="k">func</span> <span class="n">state_default</span><span class="p">():</span>
     <span class="n">controls_loop</span><span class="p">()</span>
     <span class="n">movement_loop</span><span class="p">()</span>
     <span class="n">spritedir_loop</span><span class="p">()</span>
     <span class="n">damage_loop</span><span class="p">()</span>
-
-    <span class="c1"># We&#39;re setting our animation here.  I&#39;ve replaced Vector2(0,-1)</span>
-    <span class="c1"># with Vector2.UP for readability, and so forth.  These are new to godot 3.1</span>
-    <span class="c1"># I&#39;ve also changed the order of the if statement to prioritize being</span>
-    <span class="c1"># idle if movedir is zero and created a single (very long) if statement</span>
-    <span class="c1"># for testing the push animation.</span>
 
     <span class="k">if</span> <span class="n">movedir</span> <span class="o">==</span> <span class="nb nb-Type">Vector2</span><span class="o">.</span><span class="n">ZERO</span><span class="p">:</span>
         <span class="n">anim_switch</span><span class="p">(</span><span class="s2">&quot;idle&quot;</span><span class="p">)</span>
@@ -226,6 +284,17 @@ knocked back.</p>
             <span class="n">anim_switch</span><span class="p">(</span><span class="s2">&quot;push&quot;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">anim_switch</span><span class="p">(</span><span class="s2">&quot;walk&quot;</span><span class="p">)</span>
+
+    <span class="c1"># action keys get put into project settings</span>
+    <span class="c1"># if the key assigned to &#39;a&#39; is pressed then use the sword</span>
+    <span class="k">if</span> <span class="n">Input</span><span class="o">.</span><span class="n">is_action_just_pressed</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">):</span>
+        <span class="n">use_item</span><span class="p">(</span><span class="nb">preload</span><span class="p">(</span><span class="s2">&quot;res://items/sword.tscn&quot;</span><span class="p">))</span>
+
+
+<span class="c1"># we want to keep the player still but allow them to take damage</span>
+<span class="k">func</span> <span class="n">state_swing</span><span class="p">():</span>
+    <span class="n">anim_switch</span><span class="p">(</span><span class="s2">&quot;idle&quot;</span><span class="p">)</span>
+    <span class="n">damage_loop</span><span class="p">()</span>
 
 <span class="c1"># controls_loop looks for player input</span>
 <span class="k">func</span> <span class="n">controls_loop</span><span class="p">():</span>
@@ -239,41 +308,6 @@ knocked back.</p>
     <span class="c1"># left and right keys at the same time</span>
     <span class="n">movedir</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="nb nb-Type">int</span><span class="p">(</span><span class="n">LEFT</span><span class="p">)</span> <span class="o">+</span> <span class="nb nb-Type">int</span><span class="p">(</span><span class="n">RIGHT</span><span class="p">)</span>
     <span class="n">movedir</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="nb nb-Type">int</span><span class="p">(</span><span class="n">UP</span><span class="p">)</span> <span class="o">+</span> <span class="nb nb-Type">int</span><span class="p">(</span><span class="n">DOWN</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="stalfos-code">
-<h3>Stalfos Code<a class="headerlink" href="#stalfos-code" title="Permalink to this headline">¶</a></h3>
-<p>Major Changes from the Video:</p>
-<ul class="simple">
-<li><p>The _ready func is used to set DAMAGE and other “constants”</p></li>
-</ul>
-<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">extends</span> <span class="n">entity</span>
-
-<span class="k">var</span> <span class="n">movetimer_length</span> <span class="o">=</span> <span class="mi">15</span>
-<span class="k">var</span> <span class="n">movetimer</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="c1"># ready function lets us set &quot;constants&quot; and perform</span>
-<span class="c1"># other actions when the file loads</span>
-<span class="k">func</span> <span class="n">_ready</span><span class="p">():</span>
-    <span class="n">SPEED</span> <span class="o">=</span> <span class="mi">40</span>
-    <span class="n">DAMAGE</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="o">$</span><span class="n">anim</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
-    <span class="n">movedir</span> <span class="o">=</span> <span class="n">dir</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span>
-
-<span class="k">func</span> <span class="n">_physics_process</span><span class="p">(</span><span class="n">delta</span><span class="p">):</span>
-    <span class="n">movement_loop</span><span class="p">()</span>
-    <span class="n">damage_loop</span><span class="p">()</span>
-
-    <span class="c1"># count down the movetimer every tick</span>
-    <span class="k">if</span> <span class="n">movetimer</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">movetimer</span> <span class="o">-=</span> <span class="mi">1</span>
-
-    <span class="c1"># if the movetime reaches zero or the stalfos is on a wall</span>
-    <span class="c1"># change direction and reset the timer</span>
-    <span class="k">if</span> <span class="n">movetimer</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">is_on_wall</span><span class="p">():</span>
-        <span class="n">movedir</span> <span class="o">=</span> <span class="n">dir</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span>
-        <span class="n">movetimer</span> <span class="o">=</span> <span class="n">movetimer_length</span>
 </pre></div>
 </div>
 </div>
@@ -294,16 +328,16 @@ knocked back.</p>
       <div class="footer">
         <div class="left">
           <div role="navigation" aria-label="related navigaton">
-            <a href="entity-class.html" title="Godot Lesson 3: Entity Class"
-              >previous</a> |
             <a href="items.html" title="Godot Lesson 5: Item Setup"
+              >previous</a> |
+            <a href="../../assets/assets.html" title="Asset Creation"
               >next</a> |
             <a href="../../genindex.html" title="General Index"
               >index</a>
           </div>
           <div role="note" aria-label="source link">
               <br/>
-              <a href="../../_sources/godot/fornclake/knockback.rst.txt"
+              <a href="../../_sources/godot/fornclake/enemy-health.rst.txt"
                 rel="nofollow">Show Source</a>
           </div>
         </div>

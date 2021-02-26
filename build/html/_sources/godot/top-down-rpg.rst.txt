@@ -23,6 +23,8 @@ template for almost any real time RPG.
    fornclake/animations
    fornclake/entity-class
    fornclake/knockback
+   fornclake/items
+   fornclake/enemy-health
 
 
 
