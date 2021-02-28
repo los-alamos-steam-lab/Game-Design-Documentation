@@ -25,6 +25,8 @@ template for almost any real time RPG.
    fornclake/knockback
    fornclake/items
    fornclake/enemy-health
+   fornclake/screen-scrolling
+   fornclake/object-placer
 
 
 

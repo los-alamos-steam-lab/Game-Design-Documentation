@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Godot Lesson 7: Basic Screen Scrolling &#8212; Game Design 0.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/agogo.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+  </head><body>
+    <div class="header-wrapper" role="banner">
+      <div class="header">
+          <p class="logo"><a href="../../index.html">
+            <img class="logo" src="../../_static/chibi-header.svg" alt="Logo"/>
+          </a></p>
+        <div class="headertitle"><a
+          href="../../index.html">Game Design 0.1 documentation</a></div>
+        <div class="rel" role="navigation" aria-label="related navigation">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a>
+        </div>
+       </div>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="sidebar">
+          
+          <h3>Table of Contents</h3>
+          <ul>
+<li class="toctree-l1"><a class="reference internal" href="../godot.html">Godot Game Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../assets/assets.html">Asset Creation</a></li>
+</ul>
+
+          <div role="search">
+            <h3 style="margin-top: 1.5em;">Search</h3>
+            <form class="search" action="../../search.html" method="get">
+                <input type="text" name="q" />
+                <input type="submit" value="Go" />
+            </form>
+          </div>
+
+        </div>
+        <div class="document">
+            
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="godot-lesson-7-basic-screen-scrolling">
+<h1>Godot Lesson 7: Basic Screen Scrolling<a class="headerlink" href="#godot-lesson-7-basic-screen-scrolling" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>This lesson makes the camera follow the player on a grid based map system.  Basically,
+the camera moves with the player as they change rooms, but does not stay centered on the player.
+A HUD (heads-up-display) is also added, but not yet implemented.</p>
+</div>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>A player that moves (Lesson 1)</p></li>
+<li><p>Everything will make more sense with Lessons 2 through 6</p></li>
+</ul>
+</div>
+<div class="section" id="video">
+<h2>Video<a class="headerlink" href="#video" title="Permalink to this headline">¶</a></h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-Rb-FwMQS7w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="section" id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
+<p>HUD: <a class="reference external" href="https://sprites.retro-dragon.com/index.php/2018/08/29/zlg-hud/">https://sprites.retro-dragon.com/index.php/2018/08/29/zlg-hud/</a></p>
+</div>
+<div class="section" id="code">
+<h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
+<p>Repository: <a class="reference external" href="https://github.com/los-alamos-steam-lab/godot-tutorial/tree/7-basic-screen-scrolling">https://github.com/los-alamos-steam-lab/godot-tutorial/tree/7-basic-screen-scrolling</a></p>
+<div class="section" id="camera-code">
+<h3>Camera Code<a class="headerlink" href="#camera-code" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">extends</span> <span class="n">Camera2D</span>
+
+<span class="k">var</span> <span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">160</span>
+<span class="k">var</span> <span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">128</span>
+
+<span class="k">func</span> <span class="n">_ready</span><span class="p">():</span>
+    <span class="c1"># when a body enters or exits, call a function</span>
+    <span class="o">$</span><span class="n">area</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;body_entered&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;body_entered&quot;</span><span class="p">)</span>
+    <span class="o">$</span><span class="n">area</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;body_exited&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;body_exited&quot;</span><span class="p">)</span>
+
+<span class="k">func</span> <span class="n">_process</span><span class="p">(</span><span class="n">delta</span><span class="p">):</span>
+    <span class="c1"># Find the position of the player (which means it has to be on the</span>
+    <span class="c1"># same level in the scene tree</span>
+    <span class="k">var</span> <span class="n">pos</span> <span class="o">=</span> <span class="n">get_node</span><span class="p">(</span><span class="s2">&quot;../player&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">global_position</span> <span class="o">-</span> <span class="nb nb-Type">Vector2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+
+    <span class="c1"># use the floor to find the grid position of the player</span>
+    <span class="c1"># and then multipy to put the camera in the proper spot in the scene</span>
+    <span class="k">var</span> <span class="n">x</span> <span class="o">=</span> <span class="nb">floor</span><span class="p">(</span><span class="n">pos</span><span class="o">.</span><span class="n">x</span><span class="o">/</span><span class="n">WIDTH</span><span class="p">)</span> <span class="o">*</span> <span class="n">WIDTH</span>
+    <span class="k">var</span> <span class="n">y</span> <span class="o">=</span> <span class="nb">floor</span><span class="p">(</span><span class="n">pos</span><span class="o">.</span><span class="n">y</span><span class="o">/</span><span class="n">HEIGHT</span><span class="p">)</span> <span class="o">*</span> <span class="n">HEIGHT</span>
+    <span class="n">global_position</span> <span class="o">=</span> <span class="nb nb-Type">Vector2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="k">func</span> <span class="n">body_entered</span><span class="p">(</span><span class="n">body</span><span class="p">):</span>
+    <span class="c1"># make the enemies move when they enter the camera</span>
+    <span class="k">if</span> <span class="n">body</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;TYPE&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;ENEMY&quot;</span><span class="p">:</span>
+        <span class="n">body</span><span class="o">.</span><span class="n">set_physics_process</span><span class="p">(</span><span class="bp">true</span><span class="p">)</span>
+
+<span class="k">func</span> <span class="n">body_exited</span><span class="p">(</span><span class="n">body</span><span class="p">):</span>
+    <span class="c1"># make the enemies stope when they leave the camera</span>
+    <span class="k">if</span> <span class="n">body</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;TYPE&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;ENEMY&quot;</span><span class="p">:</span>
+        <span class="n">body</span><span class="o">.</span><span class="n">set_physics_process</span><span class="p">(</span><span class="bp">false</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+    <div class="footer-wrapper">
+      <div class="footer">
+        <div class="left">
+          <div role="navigation" aria-label="related navigaton">
+            <a href="../../genindex.html" title="General Index"
+              >index</a>
+          </div>
+          <div role="note" aria-label="source link">
+              <br/>
+              <a href="../../_sources/godot/fornclake/screen-scrolling.rst.txt"
+                rel="nofollow">Show Source</a>
+          </div>
+        </div>
+
+        <div class="right">
+          
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Lisabeth Lueninghoener.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.1.
+    </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+  </body>
+</html>
