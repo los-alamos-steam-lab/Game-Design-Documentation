@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Godot Lesson 8: Object Placer &#8212; Game Design 0.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/agogo.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Godot Lesson 9: Keys and Locked Doors" href="9-keys.html" />
+    <link rel="prev" title="Godot Lesson 7: Basic Screen Scrolling" href="7-screen-scrolling.html" /> 
+  </head><body>
+    <div class="header-wrapper" role="banner">
+      <div class="header">
+          <p class="logo"><a href="../../index.html">
+            <img class="logo" src="../../_static/chibi-header.svg" alt="Logo"/>
+          </a></p>
+        <div class="headertitle"><a
+          href="../../index.html">Game Design 0.1 documentation</a></div>
+        <div class="rel" role="navigation" aria-label="related navigation">
+          <a href="7-screen-scrolling.html" title="Godot Lesson 7: Basic Screen Scrolling"
+             accesskey="P">previous</a> |
+          <a href="9-keys.html" title="Godot Lesson 9: Keys and Locked Doors"
+             accesskey="N">next</a> |
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a>
+        </div>
+       </div>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="sidebar">
+          
+          <h3>Table of Contents</h3>
+          <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../godot.html">Godot Game Engine</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../getting-started.html">Getting Started with Godot</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../top-down-rpg.html">Top Down RPG: Lessons</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="1-player-movement.html">1: Player Movement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2-animations.html">2: Walk and Push Animations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="3-entity-class.html">3: Entity Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="4-knockback.html">4: Knockback</a></li>
+<li class="toctree-l3"><a class="reference internal" href="5-items.html">5: Item Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="6-enemy-health.html">6: Enemy Health</a></li>
+<li class="toctree-l3"><a class="reference internal" href="7-screen-scrolling.html">7: Basic Screen Scorlling</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">8: Object Placer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#summary">Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#video">Video</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#code">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="9-keys.html">9: Keys and Locked Doors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="10-heart-ui.html">10: Heart UI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="11-heart-pickups.html">11: Heart Pickups</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../assets/assets.html">Asset Creation</a></li>
+</ul>
+
+          <div role="search">
+            <h3 style="margin-top: 1.5em;">Search</h3>
+            <form class="search" action="../../search.html" method="get">
+                <input type="text" name="q" />
+                <input type="submit" value="Go" />
+            </form>
+          </div>
+
+        </div>
+        <div class="document">
+            
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="godot-lesson-8-object-placer">
+<h1>Godot Lesson 8: Object Placer<a class="headerlink" href="#godot-lesson-8-object-placer" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>This lesson uses a tilemap to place enemies that are then spawned at run-time.
+This can be used for keys, and other non-unique items as well.  It is no good
+for things like signs that want individualized.  The lesson also makes use of mask and
+collision bits to keep the enemies from walking off screen.</p>
+</div>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>An enemy or something to place (Lesson 3)</p></li>
+<li><p>Everything will make more sense with Lessons 1 through 7</p></li>
+</ul>
+</div>
+<div class="section" id="video">
+<h2>Video<a class="headerlink" href="#video" title="Permalink to this headline">¶</a></h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uSQLV-Ju_QQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="section" id="code">
+<h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
+<p>Repository: <a class="reference external" href="https://github.com/los-alamos-steam-lab/godot-tutorial/tree/8-enemy-placer">https://github.com/los-alamos-steam-lab/godot-tutorial/tree/8-enemy-placer</a></p>
+<div class="section" id="enemy-tilemap-code">
+<h3>Enemy Tilemap Code<a class="headerlink" href="#enemy-tilemap-code" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">extends</span> <span class="n">TileMap</span>
+
+
+<span class="c1">#</span>
+<span class="c1"># Called when the node enters the scene tree for the first time.</span>
+<span class="k">func</span> <span class="n">_ready</span><span class="p">():</span>
+    <span class="k">var</span> <span class="n">size</span> <span class="o">=</span> <span class="n">get_cell_size</span><span class="p">()</span>
+    <span class="k">var</span> <span class="n">offset</span> <span class="o">=</span> <span class="n">size</span><span class="o">/</span><span class="mi">2</span>
+    <span class="k">for</span> <span class="n">tile</span> <span class="ow">in</span> <span class="n">get_used_cells</span><span class="p">():</span>
+        <span class="k">var</span> <span class="n">name</span> <span class="o">=</span> <span class="n">get_tileset</span><span class="p">()</span><span class="o">.</span><span class="n">tile_get_name</span><span class="p">(</span><span class="n">get_cell</span><span class="p">(</span><span class="n">tile</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">tile</span><span class="o">.</span><span class="n">y</span><span class="p">))</span>
+        <span class="k">var</span> <span class="n">node</span> <span class="o">=</span> <span class="nb">load</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="s2">&quot;res://enemies/&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s2">&quot;.tscn&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">instance</span><span class="p">()</span>
+        <span class="n">node</span><span class="o">.</span><span class="n">global_position</span> <span class="o">=</span> <span class="n">tile</span> <span class="o">*</span> <span class="n">size</span> <span class="o">+</span> <span class="n">offset</span>
+        <span class="n">get_parent</span><span class="p">()</span><span class="o">.</span><span class="n">call_deferred</span><span class="p">(</span><span class="s2">&quot;add_child&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">)</span>
+    <span class="n">queue_free</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+    <div class="footer-wrapper">
+      <div class="footer">
+        <div class="left">
+          <div role="navigation" aria-label="related navigaton">
+            <a href="7-screen-scrolling.html" title="Godot Lesson 7: Basic Screen Scrolling"
+              >previous</a> |
+            <a href="9-keys.html" title="Godot Lesson 9: Keys and Locked Doors"
+              >next</a> |
+            <a href="../../genindex.html" title="General Index"
+              >index</a>
+          </div>
+          <div role="note" aria-label="source link">
+              <br/>
+              <a href="../../_sources/godot/fornclake/8-object-placer.rst.txt"
+                rel="nofollow">Show Source</a>
+          </div>
+        </div>
+
+        <div class="right">
+          
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Lisabeth Lueninghoener.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.1.
+    </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+  </body>
+</html>

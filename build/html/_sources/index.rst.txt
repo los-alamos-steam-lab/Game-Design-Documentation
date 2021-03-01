@@ -7,11 +7,10 @@ Everything Game Design with STEAM Lab!
 =======================================
 
 .. toctree::
-   :maxdepth: 5
-
+   :maxdepth: 4
+ 
    godot/godot
    assets/assets 
-
 
 
 Game Design

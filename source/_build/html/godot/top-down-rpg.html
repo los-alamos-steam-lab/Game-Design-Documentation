@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Top Down RPG &#8212; Game Design 0.1 documentation</title>
+    <title>Top Down RPG: Lessons &#8212; Game Design 0.1 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/agogo.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
@@ -15,7 +15,7 @@
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Godot Lesson 1: Player Movement" href="fornclake/player-movement.html" />
+    <link rel="next" title="Godot Lesson 1: Player Movement" href="fornclake/1-player-movement.html" />
     <link rel="prev" title="Getting Started with Godot" href="getting-started.html" /> 
   </head><body>
     <div class="header-wrapper" role="banner">
@@ -28,7 +28,7 @@
         <div class="rel" role="navigation" aria-label="related navigation">
           <a href="getting-started.html" title="Getting Started with Godot"
              accesskey="P">previous</a> |
-          <a href="fornclake/player-movement.html" title="Godot Lesson 1: Player Movement"
+          <a href="fornclake/1-player-movement.html" title="Godot Lesson 1: Player Movement"
              accesskey="N">next</a> |
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a>
@@ -44,14 +44,18 @@
           <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="godot.html">Godot Game Engine</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html">Getting Started with Godot</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Top Down RPG</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="fornclake/player-movement.html">Godot Lesson 1: Player Movement</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fornclake/animations.html">Godot Lesson 2: Walk and Push Animations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fornclake/entity-class.html">Godot Lesson 3: Entity Class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fornclake/knockback.html">Godot Lesson 4: Knockback</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fornclake/items.html">Godot Lesson 5: Item Setup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fornclake/enemy-health.html">Godot Lesson 6: Enemy Health</a></li>
-<li class="toctree-l3"><a class="reference internal" href="fornclake/screen-scrolling.html">Godot Lesson 7: Basic Screen Scrolling</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Top Down RPG: Lessons</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fornclake/1-player-movement.html">1: Player Movement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fornclake/2-animations.html">2: Walk and Push Animations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fornclake/3-entity-class.html">3: Entity Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fornclake/4-knockback.html">4: Knockback</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fornclake/5-items.html">5: Item Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fornclake/6-enemy-health.html">6: Enemy Health</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fornclake/7-screen-scrolling.html">7: Basic Screen Scorlling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fornclake/8-object-placer.html">8: Object Placer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fornclake/9-keys.html">9: Keys and Locked Doors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fornclake/10-heart-ui.html">10: Heart UI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fornclake/11-heart-pickups.html">11: Heart Pickups</a></li>
 </ul>
 </li>
 </ul>
@@ -74,8 +78,8 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="top-down-rpg">
-<h1>Top Down RPG<a class="headerlink" href="#top-down-rpg" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="top-down-rpg-lessons">
+<h1>Top Down RPG: Lessons<a class="headerlink" href="#top-down-rpg-lessons" title="Permalink to this headline">¶</a></h1>
 <p>This tutorial relies heavily on a video series made by fornclake
 a couple of years ago. Along with his videos, I’ve provided the
 code (updated for Godot 3.1) and lot of comments.
@@ -92,13 +96,133 @@ template for almost any real time RPG.</p>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Lessons:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="fornclake/player-movement.html">Godot Lesson 1: Player Movement</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fornclake/animations.html">Godot Lesson 2: Walk and Push Animations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fornclake/entity-class.html">Godot Lesson 3: Entity Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fornclake/knockback.html">Godot Lesson 4: Knockback</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fornclake/items.html">Godot Lesson 5: Item Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fornclake/enemy-health.html">Godot Lesson 6: Enemy Health</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fornclake/screen-scrolling.html">Godot Lesson 7: Basic Screen Scrolling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fornclake/1-player-movement.html">1: Player Movement</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/1-player-movement.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/1-player-movement.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/1-player-movement.html#video">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/1-player-movement.html#code">Code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fornclake/1-player-movement.html#player-code">Player Code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fornclake/2-animations.html">2: Walk and Push Animations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/2-animations.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/2-animations.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/2-animations.html#video">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/2-animations.html#resources">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/2-animations.html#code">Code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fornclake/2-animations.html#player-code">Player Code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fornclake/3-entity-class.html">3: Entity Class</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/3-entity-class.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/3-entity-class.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/3-entity-class.html#video">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/3-entity-class.html#code">Code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fornclake/3-entity-class.html#directions-code">Directions Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fornclake/3-entity-class.html#entity-code">Entity Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fornclake/3-entity-class.html#player-code">Player Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fornclake/3-entity-class.html#stalfos-code">Stalfos Code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fornclake/4-knockback.html">4: Knockback</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/4-knockback.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/4-knockback.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/4-knockback.html#video">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/4-knockback.html#code">Code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fornclake/4-knockback.html#entity-code">Entity Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fornclake/4-knockback.html#player-code">Player Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fornclake/4-knockback.html#stalfos-code">Stalfos Code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fornclake/5-items.html">5: Item Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/5-items.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/5-items.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/5-items.html#video">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/5-items.html#code">Code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fornclake/5-items.html#item-code">Item Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fornclake/5-items.html#entity-code">Entity Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fornclake/5-items.html#player-code">Player Code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fornclake/6-enemy-health.html">6: Enemy Health</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/6-enemy-health.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/6-enemy-health.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/6-enemy-health.html#video">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/6-enemy-health.html#resources">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/6-enemy-health.html#code">Code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fornclake/6-enemy-health.html#enemy-death-code">Enemy Death Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fornclake/6-enemy-health.html#entity-code">Entity Code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fornclake/7-screen-scrolling.html">7: Basic Screen Scorlling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/7-screen-scrolling.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/7-screen-scrolling.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/7-screen-scrolling.html#video">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/7-screen-scrolling.html#resources">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/7-screen-scrolling.html#code">Code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fornclake/7-screen-scrolling.html#camera-code">Camera Code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fornclake/8-object-placer.html">8: Object Placer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/8-object-placer.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/8-object-placer.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/8-object-placer.html#video">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/8-object-placer.html#code">Code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fornclake/8-object-placer.html#enemy-tilemap-code">Enemy Tilemap Code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fornclake/9-keys.html">9: Keys and Locked Doors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/9-keys.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/9-keys.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/9-keys.html#video">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/9-keys.html#resources">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/9-keys.html#code">Code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fornclake/9-keys.html#key-code">Key Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fornclake/9-keys.html#key-door-code">Key Door Code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fornclake/10-heart-ui.html">10: Heart UI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/10-heart-ui.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/10-heart-ui.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/10-heart-ui.html#video">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/10-heart-ui.html#resources">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/10-heart-ui.html#code">Code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fornclake/10-heart-ui.html#hud-code">HUD Code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fornclake/11-heart-pickups.html">11: Heart Pickups</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/11-heart-pickups.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/11-heart-pickups.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/11-heart-pickups.html#video">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fornclake/11-heart-pickups.html#code">Code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fornclake/11-heart-pickups.html#pickup-code">Pickup Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fornclake/11-heart-pickups.html#key-code">Key Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fornclake/11-heart-pickups.html#heart-code">Heart Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fornclake/11-heart-pickups.html#entity-code">Entity Code</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -119,7 +243,7 @@ template for almost any real time RPG.</p>
           <div role="navigation" aria-label="related navigaton">
             <a href="getting-started.html" title="Getting Started with Godot"
               >previous</a> |
-            <a href="fornclake/player-movement.html" title="Godot Lesson 1: Player Movement"
+            <a href="fornclake/1-player-movement.html" title="Godot Lesson 1: Player Movement"
               >next</a> |
             <a href="../genindex.html" title="General Index"
               >index</a>

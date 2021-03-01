@@ -1,7 +1,6 @@
   
   /* Page layout */
-    
-    
+  
     div.header-wrapper {
       border-bottom: 3px solid #6200ad;
     }
@@ -15,7 +14,6 @@
   
   
   /* Sidebar */
-  
   
   div.sidebar li.toctree-l1 a {
     border: 1px solid #ae4cfa;

@@ -2,7 +2,7 @@ Godot Game Engine
 =======================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 4
    :caption: Contents:
    
    getting-started 
