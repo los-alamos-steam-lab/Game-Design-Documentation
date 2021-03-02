@@ -239,7 +239,15 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../template/index.html">Top Down RPG: Template</a><ul class="simple">
+<li class="toctree-l2"><a class="reference internal" href="../template/index.html">Top Down RPG: Template</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../template/1-camera.html">1: Camera</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../template/1-camera.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../template/1-camera.html#scene-tree">Scene Tree</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../template/1-camera.html#exports">Exports</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../template/1-camera.html#signals">Signals</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../template/1-camera.html#code">Code</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../getting-started/index.html">Top Down RPG: Making it Your Own</a><ul>
@@ -372,10 +380,14 @@ collision bits to keep the enemies from walking off screen.</p>
 <p>Repository: <a class="reference external" href="https://github.com/los-alamos-steam-lab/godot-tutorial/tree/8-enemy-placer">https://github.com/los-alamos-steam-lab/godot-tutorial/tree/8-enemy-placer</a></p>
 <div class="section" id="enemy-tilemap-code">
 <h3>Enemy Tilemap Code<a class="headerlink" href="#enemy-tilemap-code" title="Permalink to this headline">¶</a></h3>
+<p>Major Changes from the Video:</p>
+<ul class="simple">
+<li><p>To make this useful for other scenes (like keys) the final template code
+requires the tile name to be the full path to the scene (i.e enemies/stalfos).
+This change <em>has not been made here</em> but is made for the final template.</p></li>
+</ul>
 <div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">extends</span> <span class="n">TileMap</span>
 
-
-<span class="c1">#</span>
 <span class="c1"># Called when the node enters the scene tree for the first time.</span>
 <span class="k">func</span> <span class="n">_ready</span><span class="p">():</span>
     <span class="k">var</span> <span class="n">size</span> <span class="o">=</span> <span class="n">get_cell_size</span><span class="p">()</span>

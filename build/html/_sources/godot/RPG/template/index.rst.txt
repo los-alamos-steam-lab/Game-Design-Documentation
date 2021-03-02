@@ -17,8 +17,10 @@ In the next few chapters we'll cover how some of the mechanics work.
 |
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :caption: Lessons:
+
+   1: Camera<1-camera>
 
 
 

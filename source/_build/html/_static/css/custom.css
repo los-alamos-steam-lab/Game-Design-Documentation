@@ -1,0 +1,24 @@
+.wy-nav-side {
+    color: #9b9b9b;
+    background: #6200ad;
+}
+
+.wy-menu-vertical {
+    background-color: #343131;
+}
+
+h1 {
+    color: #6200ad
+}
+
+h2 {
+    color: #ae4bfa
+}
+
+h3 {
+    color: #57b5f9
+}
+
+.wy-body-for-nav {
+    background: #f4ebfa;
+}

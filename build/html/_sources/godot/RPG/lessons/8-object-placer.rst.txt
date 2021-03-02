@@ -32,13 +32,17 @@ Repository: https://github.com/los-alamos-steam-lab/godot-tutorial/tree/8-enemy-
 
 Enemy Tilemap Code
 ^^^^^^^^^^^^^^^^^^^
-  
+Major Changes from the Video:  
+
+* To make this useful for other scenes (like keys) the final template code
+  requires the tile name to be the full path to the scene (i.e enemies/stalfos).
+  This change *has not been made here* but is made for the final template.
+
+
 .. code-block:: gdscript
 
     extends TileMap
 
-
-    #
     # Called when the node enters the scene tree for the first time.
     func _ready():
         var size = get_cell_size()

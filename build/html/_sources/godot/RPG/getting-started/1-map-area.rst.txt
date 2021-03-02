@@ -23,6 +23,14 @@ Placing Items and Entities
 Using the Object Placer
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
+The video learning about the object placer is here: :doc:`/godot/RPG/lessons/8-object-placer`
+
+As a quick overview, scenes that do not need individualized (i.e. a typical
+stalfaux, rather than one that only drops bombs) can be placed as tiles in the 
+object placer and placed as tiles.  The name of the tile should be the path to
+the scene without .tscn on the end (i.e enemies/stalfos).  At run time, the engine
+will replace each tile with the appropriate scene.
+
 Signs and Other Unique Objects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

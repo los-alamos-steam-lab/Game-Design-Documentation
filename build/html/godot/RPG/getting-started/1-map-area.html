@@ -239,7 +239,15 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../template/index.html">Top Down RPG: Template</a><ul class="simple">
+<li class="toctree-l2"><a class="reference internal" href="../template/index.html">Top Down RPG: Template</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../template/1-camera.html">1: Camera</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../template/1-camera.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../template/1-camera.html#scene-tree">Scene Tree</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../template/1-camera.html#exports">Exports</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../template/1-camera.html#signals">Signals</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../template/1-camera.html#code">Code</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Top Down RPG: Making it Your Own</a><ul class="current">
@@ -369,6 +377,12 @@ the rest of the game, as it will define the size of your tilesets.</p>
 <h2>Placing Items and Entities<a class="headerlink" href="#placing-items-and-entities" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="using-the-object-placer">
 <h3>Using the Object Placer<a class="headerlink" href="#using-the-object-placer" title="Permalink to this headline">¶</a></h3>
+<p>The video learning about the object placer is here: <a class="reference internal" href="../lessons/8-object-placer.html"><span class="doc">Godot Lesson 8: Object Placer</span></a></p>
+<p>As a quick overview, scenes that do not need individualized (i.e. a typical
+stalfaux, rather than one that only drops bombs) can be placed as tiles in the
+object placer and placed as tiles.  The name of the tile should be the path to
+the scene without .tscn on the end (i.e enemies/stalfos).  At run time, the engine
+will replace each tile with the appropriate scene.</p>
 </div>
 <div class="section" id="signs-and-other-unique-objects">
 <h3>Signs and Other Unique Objects<a class="headerlink" href="#signs-and-other-unique-objects" title="Permalink to this headline">¶</a></h3>
