@@ -6,7 +6,9 @@ Godot Game Engine
    :caption: Contents:
    
    getting-started 
-   top-down-rpg
+   RPG/lessons/index
+   RPG/template/index
+   RPG/getting-started/index
 
 
 
