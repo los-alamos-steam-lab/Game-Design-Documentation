@@ -64,27 +64,13 @@ html_css_files = [
     'css/custom.css',
 ]
 
-# html_logo = "chibi-header.svg"
-
-# html_theme_options = {
-#     'rightsidebar': False,
-#     'globaltoc_collapse': False,
-#     'globaltoc_maxdepth': 4,
-#     'bgcolor': '#ffffff',
-#     'headerbg': '#ae4cfa',
-#     'footerbg': '#6200ad',
-#     'linkcolor': "#6200ad",
-#     'headercolor1': "#6200ad",
-#     'headercolor2': "#6200ad",
-#     'headerlinkcolor': "#6200ad",
-#  }
 
 html_theme_options = {
     # 'canonical_url': 
     # 'analytics_id':
     # 'analytics_anonymize_ip' = False,
     'collapse_navigation': False,
-    'sticky_navigation': True,
+    'sticky_navigation': False,
     'navigation_depth': 4,
     'includehidden': True,
     'titles_only': False,

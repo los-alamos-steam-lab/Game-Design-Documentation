@@ -1,10 +1,10 @@
 .wy-nav-side {
-    padding-top: 50px;
+    padding-top: 75px;
     padding-bottom: 0rem;
 }
 
 .wy-nav-content {
-    margin-top: 50px;
+    margin-top: 75px;
 }
 
 #explore-links {
@@ -13,10 +13,10 @@
     left: 0;
     right: 0;
     z-index: 300;
-    height: 50px;
-    line-height: 50px;
+    height: 75px;
+    line-height: 75px;
     text-align: center;
-    background-color: #6200ad;
+    background-color: #45007a;
     color: white;
     display: flex;
 }
@@ -24,9 +24,9 @@
 #explore-links .caption {
     flex: 1;
     max-height: 100%;
-    padding: 5px;
+    padding: 10px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: x-large;
+    font-size: xx-large;
 }
 
 #explore-links a {
