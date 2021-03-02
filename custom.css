@@ -1,0 +1,173 @@
+/* Page layout */
+
+
+/* div.header-wrapper {
+      border-bottom: 3px solid #6200ad;
+    }
+  
+    p.caption {
+      font-family: "Georgia", "Times New Roman", serif;
+      font-size: 1.2em;
+      color: #6200ad;
+    }
+   */
+
+
+/* Sidebar */
+
+.wy-menu-vertical li.current {
+    background: #e6c9f9
+    /* background: red */
+}
+
+
+/* .wy-menu-vertical li.current a {
+    color: red;
+    border-right: 1px solid #c682f0;
+} */
+
+.wy-menu-vertical li.current a:hover {
+    background: #d6a6f5
+}
+
+.wy-menu-vertical li span.toctree-expand {
+    color: hsla(0, 0%, 100%, .9)
+}
+
+.wy-menu-vertical li.current>a,
+.wy-menu-vertical li.on a {
+    color: #404040;
+    background: #f7edfd;
+}
+
+.wy-menu-vertical li.current>a:hover,
+.wy-menu-vertical li.on a:hover {
+    background: #f7edfd
+}
+
+
+/* .wy-menu-vertical li.current>a:hover span.toctree-expand,
+.wy-menu-vertical li.on a:hover span.toctree-expand {
+    color: blue
+} */
+
+.wy-menu-vertical li.current>a span.toctree-expand,
+.wy-menu-vertical li.on a span.toctree-expand {
+    color: hsla(0, 0%, 0%, .9)
+}
+
+.wy-menu-vertical li.toctree-l1.current>a {
+    border-bottom: 1px solid #c682f0;
+    border-top: 1px solid #c682f0
+}
+
+.wy-menu-vertical li.toctree-l2 a,
+.wy-menu-vertical li.toctree-l3 a,
+.wy-menu-vertical li.toctree-l4 a,
+.wy-menu-vertical li.toctree-l5 a,
+.wy-menu-vertical li.toctree-l6 a,
+.wy-menu-vertical li.toctree-l7 a,
+.wy-menu-vertical li.toctree-l8 a,
+.wy-menu-vertical li.toctree-l9 a,
+.wy-menu-vertical li.toctree-l10 a {
+    color: #404040
+}
+
+.wy-menu-vertical li.toctree-l2 a:hover span.toctree-expand,
+.wy-menu-vertical li.toctree-l3 a:hover span.toctree-expand,
+.wy-menu-vertical li.toctree-l4 a:hover span.toctree-expand,
+.wy-menu-vertical li.toctree-l5 a:hover span.toctree-expand,
+.wy-menu-vertical li.toctree-l6 a:hover span.toctree-expand,
+.wy-menu-vertical li.toctree-l7 a:hover span.toctree-expand,
+.wy-menu-vertical li.toctree-l8 a:hover span.toctree-expand,
+.wy-menu-vertical li.toctree-l9 a:hover span.toctree-expand,
+.wy-menu-vertical li.toctree-l10 a:hover span.toctree-expand {
+    color: green
+}
+
+.wy-menu-vertical li.toctree-l2.current>a,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3>a {
+    background: #c682f0
+}
+
+.wy-menu-vertical li.toctree-l2 span.toctree-expand {
+    color: hsla(0, 0%, 100%, .9)
+}
+
+.wy-menu-vertical li.toctree-l3.current>a,
+.wy-menu-vertical li.toctree-l3.current li.toctree-l4>a {
+    background: #b55eec
+}
+
+.wy-menu-vertical li.toctree-l3 span.toctree-expand {
+    color: hsla(0, 0%, 100%, .9)
+}
+
+.wy-side-nav-search .wy-dropdown>a:hover,
+.wy-side-nav-search>a:hover {
+    background: hsla(0, 0%, 100%, .1)
+}
+
+.wy-nav-side {
+    color: #9b9b9b;
+    background: #6200ad;
+}
+
+
+/* .wy-menu-vertical li ul li a {
+    color: #d9d9d9;
+} */
+
+.wy-menu-vertical a {
+    color: #d9d9d9
+}
+
+.wy-menu-vertical a:hover {
+    background-color: #7219b5;
+}
+
+.wy-menu-vertical a:hover span.toctree-expand {
+    color: hsla(0, 0%, 100%, .7)
+}
+
+.wy-menu-vertical a:active span.toctree-expand {
+    color: hsla(0, 0%, 100%, .9)
+}
+
+.wy-side-nav-search .wy-dropdown>a:hover,
+.wy-side-nav-search>a:hover {
+    background: hsla(0, 0%, 100%, .9)
+}
+
+.wy-side-nav-search>div.version {
+    color: hsla(0, 0%, 100%, .3)
+}
+
+
+/* .wy-nav .wy-menu-vertical header {
+    color: #2980b9
+} */
+
+
+/* .wy-nav .wy-menu-vertical a {
+    color: #b3b3b3
+} */
+
+
+/* .wy-nav .wy-menu-vertical a:hover {
+    background-color: #2980b9;
+    color: #fff
+} */
+
+
+/* Footer */
+
+
+/* div.footer-wrapper {
+    border-top: 4px solid #ae4cfa;
+  }
+  
+  div.footer, div.footer a {
+    color: white;
+  }
+   */

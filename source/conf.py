@@ -51,7 +51,8 @@ exclude_patterns = []
 # html_theme = "classic"
 # html_theme = "bizstyle"
 # html_theme = "pyramid"
-html_theme = "agogo"
+# html_theme = "agogo"
+html_theme = "sphinx_rtd_theme"
 # html_theme = "nature"
 
 # Add any paths that contain custom static files (such as style sheets) here,
@@ -63,18 +64,35 @@ html_css_files = [
     'css/custom.css',
 ]
 
-html_logo = "chibi-header.svg"
-html_theme_options = {
-    'rightsidebar': False,
-    'globaltoc_collapse': False,
-    'globaltoc_maxdepth': 4,
-    'bgcolor': '#ffffff',
-    'headerbg': '#ae4cfa',
-    'footerbg': '#6200ad',
-    'linkcolor': "#6200ad",
-    'headercolor1': "#6200ad",
-    'headercolor2': "#6200ad",
-    'headerlinkcolor': "#6200ad",
- }
+# html_logo = "chibi-header.svg"
 
+# html_theme_options = {
+#     'rightsidebar': False,
+#     'globaltoc_collapse': False,
+#     'globaltoc_maxdepth': 4,
+#     'bgcolor': '#ffffff',
+#     'headerbg': '#ae4cfa',
+#     'footerbg': '#6200ad',
+#     'linkcolor': "#6200ad",
+#     'headercolor1': "#6200ad",
+#     'headercolor2': "#6200ad",
+#     'headerlinkcolor': "#6200ad",
+#  }
+
+html_theme_options = {
+    # 'canonical_url': 
+    # 'analytics_id':
+    # 'analytics_anonymize_ip' = False,
+    'collapse_navigation': False,
+    'sticky_navigation': True,
+    'navigation_depth': 4,
+    'includehidden': True,
+    'titles_only': False,
+    'logo_only': False,
+    'display_version': True,
+    'prev_next_buttons_location': 'bottom',
+    'style_external_links': False,
+    'style_nav_header_background': '#6200ad',
+    # 'vcs_pageview_mode':
+}
 

@@ -1,0 +1,71 @@
+{% extends "sphinx_rtd_theme/layout.html" %} {% set css_files = css_files + ["_static/css/explore.css"] %} {% set css_files = css_files + ["_static/css/nbsphinx.css"] %} {% set script_files = script_files + ["_static/js/custom.js"] %} {% block extrabody
+%}
+<nav id="explore-links">
+    <a class='caption' href="https://lasteamlab.com/">
+        Los Alamos STEAM Lab
+    </a>
+
+    <!-- <ul>
+        <li>
+            <a>Get Started</a>
+            <ul>
+                <li><a href="https://docs.dask.org/en/latest/install.html"> Install </a></li>
+                <li><a href="https://examples.dask.org"> Examples </a></li>
+                <li><a href="https://github.com/dask/dask-tutorial"> Tutorial </a></li>
+                <li><a href="https://docs.dask.org/en/latest/why.html"> Why Dask? </a></li>
+                <li><a href="https://stories.dask.org/en/latest"> Use Cases </a></li>
+                <li><a href="https://www.youtube.com/watch?v=RA_2qdipVng&list=PLRtz5iA93T4PQvWuoMnIyEIz1fXiJ5Pri"> Talks
+                    </a></li>
+                <li><a href="https://mybinder.org/v2/gh/dask/dask-examples/master?urlpath=lab"> Try Online </a></li>
+                <li><a href="https://dask.org/slides"> Slides </a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="">Algorithms</a>
+            <ul>
+                <li><a href="https://docs.dask.org/en/latest/array.html">Arrays</a></li>
+                <li><a href="https://docs.dask.org/en/latest/dataframe.html">Dataframes</a></li>
+                <li><a href="https://docs.dask.org/en/latest/bag.html">Bags</a></li>
+                <li><a href="https://docs.dask.org/en/latest/delayed.html">Delayed (custom)</a></li>
+                <li><a href="https://docs.dask.org/en/latest/futures.html">Futures (real-time)</a></li>
+                <li><a href="http://ml.dask.org">Machine Learning</a></li>
+                <li><a href="https://xarray.pydata.org/en/latest/">XArray</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="https://docs.dask.org/en/latest/setup.html">Setup</a>
+            <ul>
+                <li><a href="https://docs.dask.org/en/latest/setup/single-machine.html"> Local </a></li>
+                <li><a href="https://docs.dask.org/en/latest/setup/cloud.html"> Cloud </a></li>
+                <li><a href="https://docs.dask.org/en/latest/setup/hpc.html"> HPC </a></li>
+                <li><a href="https://kubernetes.dask.org/en/latest/"> Kubernetes </a></li>
+                <li><a href="https://yarn.dask.org/en/latest/"> Hadoop / Yarn </a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a>Community</a>
+            <ul>
+                <li><a href="http://docs.dask.org/en/latest/support.html">Ask for Help</a></li>
+                <li><a href="https://github.com/dask">Github</a></li>
+                <li><a href="https://stackoverflow.com/questions/tagged/dask">Stack Overflow</a></li>
+                <li><a href="https://twitter.com/dask_dev">Twitter</a></li>
+                <li><a href="https://blog.dask.org/"> Developer Blog </a></li>
+                <li><a href="https://youtube.com/c/dask-dev"> YouTube Channel </a></li>
+            </ul>
+        </li>
+    </ul> -->
+
+</nav>
+{% endblock %} {% block navigation %}
+<div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+    {% block menu %} {# The singlehtml builder doesn't handle this toctree call when the toctree is empty. Skip building this for now. #} {% if 'singlehtml' not in builder %} {% set global_toc = toctree(maxdepth=theme_navigation_depth|int, collapse=theme_collapse_navigation|tobool,
+    includehidden=theme_includehidden|tobool, titles_only=theme_titles_only|tobool) %} {% endif %} {% if global_toc %} {{ global_toc }} {% else %}
+    <!-- Local TOC -->
+    <div class="local-toc">{{ toc }}</div>
+    {% endif %} {% endblock %}
+    <img src="{{ pathto('_static/mouse-hi-res.png', 1) }}" />
+</div>
+{% endblock %}
