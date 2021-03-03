@@ -1,0 +1,788 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Godot Template: Entity Class &mdash; Game Design 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/explore.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/nbsphinx.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/js/custom.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+  
+<nav id="explore-links">
+    <a class='caption' href="https://lasteamlab.com/">
+        Los Alamos STEAM Lab
+    </a>
+
+    <!-- <ul>
+        <li>
+            <a>Get Started</a>
+            <ul>
+                <li><a href="https://docs.dask.org/en/latest/install.html"> Install </a></li>
+                <li><a href="https://examples.dask.org"> Examples </a></li>
+                <li><a href="https://github.com/dask/dask-tutorial"> Tutorial </a></li>
+                <li><a href="https://docs.dask.org/en/latest/why.html"> Why Dask? </a></li>
+                <li><a href="https://stories.dask.org/en/latest"> Use Cases </a></li>
+                <li><a href="https://www.youtube.com/watch?v=RA_2qdipVng&list=PLRtz5iA93T4PQvWuoMnIyEIz1fXiJ5Pri"> Talks
+                    </a></li>
+                <li><a href="https://mybinder.org/v2/gh/dask/dask-examples/master?urlpath=lab"> Try Online </a></li>
+                <li><a href="https://dask.org/slides"> Slides </a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="">Algorithms</a>
+            <ul>
+                <li><a href="https://docs.dask.org/en/latest/array.html">Arrays</a></li>
+                <li><a href="https://docs.dask.org/en/latest/dataframe.html">Dataframes</a></li>
+                <li><a href="https://docs.dask.org/en/latest/bag.html">Bags</a></li>
+                <li><a href="https://docs.dask.org/en/latest/delayed.html">Delayed (custom)</a></li>
+                <li><a href="https://docs.dask.org/en/latest/futures.html">Futures (real-time)</a></li>
+                <li><a href="http://ml.dask.org">Machine Learning</a></li>
+                <li><a href="https://xarray.pydata.org/en/latest/">XArray</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="https://docs.dask.org/en/latest/setup.html">Setup</a>
+            <ul>
+                <li><a href="https://docs.dask.org/en/latest/setup/single-machine.html"> Local </a></li>
+                <li><a href="https://docs.dask.org/en/latest/setup/cloud.html"> Cloud </a></li>
+                <li><a href="https://docs.dask.org/en/latest/setup/hpc.html"> HPC </a></li>
+                <li><a href="https://kubernetes.dask.org/en/latest/"> Kubernetes </a></li>
+                <li><a href="https://yarn.dask.org/en/latest/"> Hadoop / Yarn </a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a>Community</a>
+            <ul>
+                <li><a href="http://docs.dask.org/en/latest/support.html">Ask for Help</a></li>
+                <li><a href="https://github.com/dask">Github</a></li>
+                <li><a href="https://stackoverflow.com/questions/tagged/dask">Stack Overflow</a></li>
+                <li><a href="https://twitter.com/dask_dev">Twitter</a></li>
+                <li><a href="https://blog.dask.org/"> Developer Blog </a></li>
+                <li><a href="https://youtube.com/c/dask-dev"> YouTube Channel </a></li>
+            </ul>
+        </li>
+    </ul> -->
+
+</nav>
+
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #6200ad" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Game Design
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+<div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../godot.html">Godot Game Engine</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../getting-started.html">Getting Started with Godot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../getting-started.html#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../getting-started.html#downloading">Downloading</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../getting-started.html#setting-up-the-environment">Setting up the Environment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../getting-started.html#comment-blocks">Comment Blocks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../getting-started.html#indenting">Indenting</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../lessons/index.html">Top Down RPG: Lessons</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../lessons/1-player-movement.html">1: Player Movement</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/1-player-movement.html#summary">Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/1-player-movement.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/1-player-movement.html#video">Video</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/1-player-movement.html#code">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../lessons/2-animations.html">2: Walk and Push Animations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/2-animations.html#summary">Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/2-animations.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/2-animations.html#video">Video</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/2-animations.html#resources">Resources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/2-animations.html#code">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../lessons/3-entity-class.html">3: Entity Class</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/3-entity-class.html#summary">Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/3-entity-class.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/3-entity-class.html#video">Video</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/3-entity-class.html#code">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../lessons/4-knockback.html">4: Knockback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/4-knockback.html#summary">Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/4-knockback.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/4-knockback.html#video">Video</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/4-knockback.html#code">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../lessons/5-items.html">5: Item Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/5-items.html#summary">Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/5-items.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/5-items.html#video">Video</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/5-items.html#code">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../lessons/6-enemy-health.html">6: Enemy Health</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/6-enemy-health.html#summary">Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/6-enemy-health.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/6-enemy-health.html#video">Video</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/6-enemy-health.html#resources">Resources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/6-enemy-health.html#code">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../lessons/7-screen-scrolling.html">7: Basic Screen Scorlling</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/7-screen-scrolling.html#summary">Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/7-screen-scrolling.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/7-screen-scrolling.html#video">Video</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/7-screen-scrolling.html#resources">Resources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/7-screen-scrolling.html#code">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../lessons/8-object-placer.html">8: Object Placer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/8-object-placer.html#summary">Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/8-object-placer.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/8-object-placer.html#video">Video</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/8-object-placer.html#code">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../lessons/9-keys.html">9: Keys and Locked Doors</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/9-keys.html#summary">Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/9-keys.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/9-keys.html#video">Video</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/9-keys.html#resources">Resources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/9-keys.html#code">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../lessons/10-heart-ui.html">10: Heart UI</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/10-heart-ui.html#summary">Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/10-heart-ui.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/10-heart-ui.html#video">Video</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/10-heart-ui.html#resources">Resources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/10-heart-ui.html#code">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../lessons/11-heart-pickups.html">11: Heart Pickups</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/11-heart-pickups.html#summary">Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/11-heart-pickups.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/11-heart-pickups.html#video">Video</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lessons/11-heart-pickups.html#code">Code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html">Top Down RPG: Template</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="1-camera.html">1: Camera</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="1-camera.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="1-camera.html#scene-tree">Scene Tree</a></li>
+<li class="toctree-l4"><a class="reference internal" href="1-camera.html#exports">Exports</a></li>
+<li class="toctree-l4"><a class="reference internal" href="1-camera.html#signals">Signals</a></li>
+<li class="toctree-l4"><a class="reference internal" href="1-camera.html#code">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="2-save-game.html">2: Save Game</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="2-save-game.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="2-save-game.html#main-scene">Main Scene</a></li>
+<li class="toctree-l4"><a class="reference internal" href="2-save-game.html#map-areas">Map Areas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="2-save-game.html#code">Code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../getting-started/index.html">Top Down RPG: Making it Your Own</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../getting-started/1-map-area.html">1: Making a New Map Area</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../getting-started/1-map-area.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../getting-started/1-map-area.html#drawing-the-scene">Drawing the Scene</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../getting-started/1-map-area.html#placing-items-and-entities">Placing Items and Entities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../getting-started/1-map-area.html#playing-the-scene">Playing the Scene</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../assets/assets.html">Asset Creation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../assets/apps/apps.html">Graphics Applications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../assets/apps/inkscape.html">Inkscape</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../assets/apps/inkscape.html#summary">Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../assets/apps/inkscape.html#getting-started">Getting Started</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../assets/apps/inkscape.html#more-coming">More Coming</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../assets/apps/gimp.html">GIMP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../assets/apps/gimp.html#summary">Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../assets/apps/gimp.html#getting-started">Getting Started</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../assets/apps/gimp.html#more-coming">More Coming</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../assets/apps/pixel-editors.html">Pixel Editors</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../assets/apps/pixel-editors.html#summary">Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../assets/apps/pixel-editors.html#online-apps">Online Apps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../assets/apps/pixel-editors.html#more-coming">More Coming</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  
+    <img src="../../../_static/images/mouse-hi-res.png" />
+</div>
+
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Game Design</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Godot Template: Entity Class</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/godot/RPG/template/3-entity.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="godot-template-entity-class">
+<h1>Godot Template: Entity Class<a class="headerlink" href="#godot-template-entity-class" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The entity class is used for players, enemies, and eventual NPCs.  It covers movements, damage,
+health, etc.</p>
+</div>
+<div class="section" id="scene-tree">
+<h2>Scene Tree<a class="headerlink" href="#scene-tree" title="Permalink to this headline">¶</a></h2>
+<p>Entity is a class and not a scene, but it relies on its instances having this tree structure.
+Anything not in quotes should be named exactly.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>“Name” is type Entity</dt><dd><ul>
+<li><p>AnimationPlayer is type AnimationPlayer</p></li>
+<li><p>Sprite is type Sprite</p></li>
+<li><p>CollisionShape2D is type CollisionShape2D</p></li>
+<li><dl class="simple">
+<dt>Hitbox is type Area2D</dt><dd><ul>
+<li><p>CollisionShape2D is type CollisionShape2D</p></li>
+<li><p>[optional] RayCast2D is type RayCast2D</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="exports">
+<h2>Exports<a class="headerlink" href="#exports" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>TYPE</dt><dd><ul>
+<li><p>Currently can be “ENEMY” and “PLAYER”.  “NPC” is another likely class, for talking to villagers.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>HURT_SOUND</dt><dd><ul>
+<li><p>Link to a wav file.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>MAX_HEALTH</dt><dd><ul>
+<li><p>Default is 1, can range between 0.5 and 20 and is incremental by 0.5</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>SPEED</dt><dd><ul>
+<li><p>How fast the entity moves on the screen</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>DAMAGE</dt><dd><ul>
+<li><p>The amount the entity harms an entity of a different type</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>ITEM_DROP_PERCENT</dt><dd><ul>
+<li><p>The chance of an enemy dropping something when they die</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>ITEM_DROP_WEIGHT</dt><dd><ul>
+<li><p>Dictionary: the key is the scene path (-.tscn) to a pickup and the value is the weight of the pickup</p></li>
+<li><p>This is covered more in <a class="reference internal" href="4-enemy-drops.html"><span class="doc">Godot Template: Enemy Drops</span></a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="ready">
+<h2>_ready()<a class="headerlink" href="#ready" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Set textures.</p></li>
+<li><p>Set health to MAX_HEALTH.</p></li>
+<li><p>Set home_position (this tells the entity where to respawn on reset.)</p></li>
+<li><p>Normalize the drop weights (drops are discussed in greater detail in <a class="reference internal" href="4-enemy-drops.html"><span class="doc">Godot Template: Enemy Drops</span></a></p></li>
+<li><p>Connect the camera signals (discussed in <a class="reference internal" href="1-camera.html"><span class="doc">Godot Template: Understanding the Camera</span></a>)</p></li>
+</ul>
+</div>
+<div class="section" id="loops">
+<h2>Loops<a class="headerlink" href="#loops" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="movement">
+<h3>Movement<a class="headerlink" href="#movement" title="Permalink to this headline">¶</a></h3>
+<p>This loop is quite simple.  It grabs the entities movedir and normalizes it.  Then if it is in hitstun
+it multiplies it my the hitstun multiplier.  Otherwise it multiplies it by speed.  Finally, it calls
+move_and_slide() to move the entity.</p>
+</div>
+<div class="section" id="damage">
+<h3>Damage<a class="headerlink" href="#damage" title="Permalink to this headline">¶</a></h3>
+<p>This loop updates hitstun, kills enemies with no health, and checks collisions to see if they cause damage.</p>
+<ul class="simple">
+<li><p>Make sure health isn’t too high.  This could happen when player picks up a heart when only missing 1/4 heart.</p></li>
+<li><p>If in hitstun, reduce by 1 and set texture to hurt.</p></li>
+<li><dl class="simple">
+<dt>Otherwise set the texture to default and check to see if the enemy is dead.</dt><dd><ul>
+<li><p>If the enemy is dead, trigger enemy death.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Look for all areas that overlap the Entity hitbox.</dt><dd><ul>
+<li><p>Get the parent (body).</p></li>
+<li><dl class="simple">
+<dt>If the entity isn’t in hitstun and the body has damage and the damage is greater than 0 and it isn’t the same type as the entity:</dt><dd><ul>
+<li><p>Reduce health by damage</p></li>
+<li><p>Set hitstun and knockdir</p></li>
+<li><p>Play the hurt sound</p></li>
+<li><p>If the body has delete_on_hit set, then delete it (i.e. arrows)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="sprite-dir">
+<h3>Sprite Dir<a class="headerlink" href="#sprite-dir" title="Permalink to this headline">¶</a></h3>
+<p>This loop is also quite simple.  It sets the spritedir based on the movedir and calls anim_switch().
+Entities with very simple animations will not call this loop.</p>
+</div>
+</div>
+<div class="section" id="use-item">
+<h2>Use item<a class="headerlink" href="#use-item" title="Permalink to this headline">¶</a></h2>
+<p>Items are generally weapons. This function:</p>
+<ul class="simple">
+<li><p>Instances an item</p></li>
+<li><p>Puts it in group “itemname” + “enitityid” so it can track the number of items owned by the entity.</p></li>
+<li><p>Adds the item as a child of the entity. The item sets its type to be the same as its parent in _ready()</p></li>
+<li><p>If there are to many items instanced, then delete it.  This is determined my the item’s MAX_AMOUNT, so it can’t be determined before instancing.</p></li>
+<li><p>Set the item’s input.  This is used by things like the sword scene that want to check to see if it is being held.</p></li>
+<li><p>Call the item’s start() function.  This may include animation and sound effects.</p></li>
+</ul>
+</div>
+<div class="section" id="code">
+<h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="entity-gd">
+<h3>entity.gd<a class="headerlink" href="#entity-gd" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">extends</span> <span class="n">KinematicBody2D</span>
+
+<span class="k">class_name</span> <span class="n">Entity</span>
+
+<span class="c1"># ATTRIBUTES</span>
+<span class="c1"># These are settable in the inspector</span>
+<span class="k">export</span><span class="p">(</span><span class="nb nb-Type">String</span><span class="p">,</span> <span class="s2">&quot;ENEMY&quot;</span><span class="p">,</span> <span class="s2">&quot;PLAYER&quot;</span><span class="p">)</span>   <span class="k">var</span> <span class="n">TYPE</span>                <span class="o">=</span> <span class="s2">&quot;ENEMY&quot;</span>
+<span class="k">export</span><span class="p">(</span><span class="nb nb-Type">String</span><span class="p">,</span> <span class="n">FILE</span><span class="p">)</span>                        <span class="k">var</span> <span class="n">HURT_SOUND</span>  <span class="o">=</span> <span class="s2">&quot;res://enemies/enemy_hurt.wav&quot;</span>
+
+<span class="c1"># STATS</span>
+<span class="c1"># (float, min, max, increment)</span>
+<span class="k">export</span><span class="p">(</span><span class="nb nb-Type">float</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>                 <span class="k">var</span> <span class="n">MAX_HEALTH</span>  <span class="o">=</span> <span class="mi">1</span>
+<span class="k">export</span><span class="p">(</span><span class="nb nb-Type">int</span><span class="p">)</span>                                                 <span class="k">var</span> <span class="n">SPEED</span>               <span class="o">=</span> <span class="mi">70</span>
+<span class="k">export</span><span class="p">(</span><span class="nb nb-Type">float</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>           <span class="k">var</span> <span class="n">DAMAGE</span>              <span class="o">=</span> <span class="mf">0.5</span>
+
+
+<span class="c1"># ITEM DROPS</span>
+<span class="k">export</span><span class="p">(</span><span class="nb nb-Type">int</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>                      <span class="k">var</span> <span class="n">ITEM_DROP_PERCENT</span>           <span class="o">=</span> <span class="mi">25</span>
+
+<span class="c1"># Keys are scene path names and values should be integers</span>
+<span class="k">export</span><span class="p">(</span><span class="nb nb-Type">Dictionary</span><span class="p">)</span>                          <span class="k">var</span> <span class="n">ITEM_DROP_WEIGHTS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;pickups/heart&#39;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;pickups/key&#39;</span>   <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">}</span>
+
+
+<span class="c1"># MOVEMENT</span>
+<span class="k">var</span> <span class="n">movedir</span> <span class="p">:</span><span class="o">=</span> <span class="nb nb-Type">Vector2</span><span class="o">.</span><span class="n">ZERO</span>
+<span class="k">var</span> <span class="n">knockdir</span> <span class="p">:</span><span class="o">=</span> <span class="nb nb-Type">Vector2</span><span class="o">.</span><span class="n">ZERO</span>
+<span class="k">var</span> <span class="n">spritedir</span> <span class="p">:</span><span class="o">=</span> <span class="s2">&quot;Down&quot;</span>
+
+<span class="c1"># COMBAT</span>
+<span class="k">var</span> <span class="n">health</span> <span class="p">:</span> <span class="nb nb-Type">float</span> <span class="o">=</span> <span class="n">MAX_HEALTH</span>
+<span class="k">var</span> <span class="n">hitstun</span> <span class="p">:</span><span class="o">=</span> <span class="mi">0</span>
+<span class="k">var</span> <span class="n">state</span> <span class="p">:</span><span class="o">=</span> <span class="s2">&quot;default&quot;</span>
+<span class="k">var</span> <span class="n">home_position</span> <span class="p">:</span><span class="o">=</span> <span class="nb nb-Type">Vector2</span><span class="o">.</span><span class="n">ZERO</span>
+
+<span class="c1"># TEXTURES</span>
+<span class="k">var</span> <span class="n">texture_default</span> <span class="o">=</span> <span class="nb nb-Type">null</span>
+<span class="k">var</span> <span class="n">texture_hurt</span> <span class="o">=</span> <span class="nb nb-Type">null</span>
+
+<span class="c1"># These get loaded a moment after the entity</span>
+<span class="k">onready</span> <span class="k">var</span> <span class="n">anim</span> <span class="p">:</span><span class="o">=</span> <span class="o">$</span><span class="n">AnimationPlayer</span>
+<span class="k">onready</span> <span class="k">var</span> <span class="n">sprite</span> <span class="p">:</span><span class="o">=</span> <span class="o">$</span><span class="n">Sprite</span>
+<span class="k">onready</span> <span class="k">var</span> <span class="n">hitbox</span> <span class="p">:</span><span class="o">=</span> <span class="o">$</span><span class="n">Hitbox</span>
+<span class="k">onready</span> <span class="k">var</span> <span class="n">camera</span> <span class="p">:</span><span class="o">=</span> <span class="n">get_node</span><span class="p">(</span><span class="s2">&quot;/root/Main/Camera&quot;</span><span class="p">)</span>
+
+<span class="k">func</span> <span class="n">_ready</span><span class="p">():</span>
+    <span class="n">texture_default</span> <span class="o">=</span> <span class="n">sprite</span><span class="o">.</span><span class="n">texture</span>
+    <span class="n">texture_hurt</span> <span class="o">=</span> <span class="nb">load</span><span class="p">(</span><span class="n">sprite</span><span class="o">.</span><span class="n">texture</span><span class="o">.</span><span class="n">get_path</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.png&quot;</span><span class="p">,</span><span class="s2">&quot;_hurt.png&quot;</span><span class="p">))</span>
+    <span class="n">add_to_group</span><span class="p">(</span><span class="s2">&quot;entity&quot;</span><span class="p">)</span>
+    <span class="n">health</span> <span class="o">=</span> <span class="n">MAX_HEALTH</span>
+    <span class="n">home_position</span> <span class="o">=</span> <span class="n">position</span>
+
+    <span class="n">normalize_item_drop_weights</span><span class="p">()</span>
+
+    <span class="c1"># the camera sends these signals</span>
+    <span class="n">camera</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;screen_change_started&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;screen_change_started&quot;</span><span class="p">)</span>
+    <span class="n">camera</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;screen_change_completed&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;screen_change_completed&quot;</span><span class="p">)</span>
+
+<span class="k">func</span> <span class="n">loop_movement</span><span class="p">():</span>
+    <span class="k">var</span> <span class="n">motion</span>
+    <span class="k">if</span> <span class="n">hitstun</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">motion</span> <span class="o">=</span> <span class="n">movedir</span><span class="o">.</span><span class="n">normalized</span><span class="p">()</span> <span class="o">*</span> <span class="n">SPEED</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">motion</span> <span class="o">=</span> <span class="n">knockdir</span><span class="o">.</span><span class="n">normalized</span><span class="p">()</span> <span class="o">*</span> <span class="mi">125</span>
+    <span class="n">move_and_slide</span><span class="p">(</span><span class="n">motion</span><span class="p">)</span>
+
+<span class="k">func</span> <span class="n">loop_spritedir</span><span class="p">():</span>
+    <span class="k">match</span> <span class="n">movedir</span><span class="p">:</span>
+        <span class="nb nb-Type">Vector2</span><span class="o">.</span><span class="n">LEFT</span><span class="p">:</span>
+            <span class="n">spritedir</span> <span class="o">=</span> <span class="s2">&quot;Left&quot;</span>
+        <span class="nb nb-Type">Vector2</span><span class="o">.</span><span class="n">RIGHT</span><span class="p">:</span>
+            <span class="n">spritedir</span> <span class="o">=</span> <span class="s2">&quot;Right&quot;</span>
+        <span class="nb nb-Type">Vector2</span><span class="o">.</span><span class="n">UP</span><span class="p">:</span>
+            <span class="n">spritedir</span> <span class="o">=</span> <span class="s2">&quot;Up&quot;</span>
+        <span class="nb nb-Type">Vector2</span><span class="o">.</span><span class="n">DOWN</span><span class="p">:</span>
+            <span class="n">spritedir</span> <span class="o">=</span> <span class="s2">&quot;Down&quot;</span>
+    <span class="c1"># This is a unary if statement.  sprite.flip_h is  set to the</span>
+    <span class="c1"># return of spritedir == &quot;Left&quot; (true or false)</span>
+    <span class="c1"># This lets us not need separate anims for left and right</span>
+    <span class="n">sprite</span><span class="o">.</span><span class="n">flip_h</span> <span class="o">=</span> <span class="n">spritedir</span> <span class="o">==</span> <span class="s2">&quot;Left&quot;</span>
+
+<span class="k">func</span> <span class="n">loop_damage</span><span class="p">():</span>
+    <span class="n">health</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">health</span><span class="p">,</span> <span class="n">MAX_HEALTH</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">hitstun</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">hitstun</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="n">sprite</span><span class="o">.</span><span class="n">texture</span> <span class="o">=</span> <span class="n">texture_hurt</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">sprite</span><span class="o">.</span><span class="n">texture</span> <span class="o">=</span> <span class="n">texture_default</span>
+        <span class="k">if</span> <span class="n">TYPE</span> <span class="o">==</span> <span class="s2">&quot;ENEMY&quot;</span> <span class="o">&amp;&amp;</span> <span class="n">health</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">enemy_death</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">area</span> <span class="ow">in</span> <span class="n">hitbox</span><span class="o">.</span><span class="n">get_overlapping_areas</span><span class="p">():</span>
+        <span class="k">var</span> <span class="n">body</span> <span class="o">=</span> <span class="n">area</span><span class="o">.</span><span class="n">get_parent</span><span class="p">()</span>
+
+        <span class="c1"># if the entity isn&#39;t in hitstun, and the overlapping body gives damage</span>
+        <span class="c1"># and the overlapping body is of a different type</span>
+        <span class="k">if</span> <span class="n">hitstun</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">body</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;DAMAGE&quot;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">body</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;DAMAGE&quot;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">body</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;TYPE&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="n">TYPE</span><span class="p">:</span>
+            <span class="n">health</span> <span class="o">-=</span> <span class="n">body</span><span class="o">.</span><span class="n">DAMAGE</span>
+            <span class="n">hitstun</span> <span class="o">=</span> <span class="mi">10</span>
+            <span class="n">knockdir</span> <span class="o">=</span> <span class="n">global_position</span> <span class="o">-</span> <span class="n">body</span><span class="o">.</span><span class="n">global_position</span>
+            <span class="n">sfx</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="nb">load</span><span class="p">(</span><span class="n">HURT_SOUND</span><span class="p">))</span>
+
+            <span class="k">if</span> <span class="n">body</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;delete_on_hit&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="bp">true</span><span class="p">:</span>
+                <span class="n">body</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+
+<span class="k">func</span> <span class="n">anim_switch</span><span class="p">(</span><span class="n">animation</span><span class="p">):</span>
+    <span class="k">var</span> <span class="n">newanim</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">animation</span><span class="p">,</span><span class="n">spritedir</span><span class="p">)</span>
+
+    <span class="c1"># if sprite dir is Left or Right</span>
+    <span class="k">if</span> <span class="n">spritedir</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Left&quot;</span><span class="p">,</span><span class="s2">&quot;Right&quot;</span><span class="p">]:</span>
+        <span class="n">newanim</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">animation</span><span class="p">,</span><span class="s2">&quot;Side&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">anim</span><span class="o">.</span><span class="n">current_animation</span> <span class="o">!=</span> <span class="n">newanim</span><span class="p">:</span>
+        <span class="n">anim</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">newanim</span><span class="p">)</span>
+
+<span class="k">func</span> <span class="n">use_item</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">input</span><span class="p">):</span>
+    <span class="k">var</span> <span class="n">newitem</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">instance</span><span class="p">()</span>
+    <span class="k">var</span> <span class="n">itemgroup</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span>
+    <span class="n">newitem</span><span class="o">.</span><span class="n">add_to_group</span><span class="p">(</span><span class="n">itemgroup</span><span class="p">)</span>
+    <span class="n">add_child</span><span class="p">(</span><span class="n">newitem</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">get_nodes_in_group</span><span class="p">(</span><span class="n">itemgroup</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">newitem</span><span class="o">.</span><span class="n">MAX_AMOUNT</span><span class="p">:</span>
+        <span class="n">newitem</span><span class="o">.</span><span class="n">queue_free</span><span class="p">()</span>
+        <span class="k">return</span>
+    <span class="n">newitem</span><span class="o">.</span><span class="n">input</span> <span class="o">=</span> <span class="n">input</span>
+    <span class="n">newitem</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+<span class="k">func</span> <span class="n">instance_scene</span><span class="p">(</span><span class="n">scene</span><span class="p">):</span>
+    <span class="k">var</span> <span class="n">new_scene</span> <span class="o">=</span> <span class="n">scene</span><span class="o">.</span><span class="n">instance</span><span class="p">()</span>
+    <span class="n">new_scene</span><span class="o">.</span><span class="n">global_position</span> <span class="o">=</span> <span class="n">global_position</span>
+    <span class="n">get_parent</span><span class="p">()</span><span class="o">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">new_scene</span><span class="p">)</span>
+
+<span class="k">func</span> <span class="n">enemy_death</span><span class="p">():</span>
+    <span class="n">instance_scene</span><span class="p">(</span><span class="nb">preload</span><span class="p">(</span><span class="s2">&quot;res://enemies/enemy_death.tscn&quot;</span><span class="p">))</span>
+    <span class="n">enemy_drop</span><span class="p">()</span>
+    <span class="n">queue_free</span><span class="p">()</span>
+
+<span class="c1"># When the enemy dies it may drop an item</span>
+<span class="k">func</span> <span class="n">enemy_drop</span><span class="p">():</span>
+    <span class="c1"># drop is a number between 0 and 99</span>
+    <span class="k">var</span> <span class="n">drop</span> <span class="o">=</span> <span class="nb">randi</span><span class="p">()</span> <span class="o">%</span> <span class="mi">100</span>
+
+    <span class="c1"># if drop is strictly less than our percentage, then drop something</span>
+    <span class="k">if</span> <span class="n">drop</span> <span class="o">&lt;</span> <span class="n">ITEM_DROP_PERCENT</span><span class="p">:</span>
+        <span class="c1"># Here we are basically filling a hat with names.</span>
+        <span class="c1"># For each key, we&#39;ll put [value] entries of the key into the list</span>
+        <span class="k">var</span> <span class="n">drop_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">ITEM_DROP_WEIGHTS</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ITEM_DROP_WEIGHTS</span><span class="p">[</span><span class="n">key</span><span class="p">]):</span>
+                <span class="n">drop_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+        <span class="c1"># index is a number between 0 and list size - 1</span>
+        <span class="k">var</span> <span class="n">index</span> <span class="o">=</span> <span class="nb">randi</span><span class="p">()</span> <span class="o">%</span> <span class="n">drop_list</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+        <span class="c1"># load the scene at index</span>
+        <span class="k">var</span> <span class="n">scene</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="s2">&quot;res://&quot;</span><span class="p">,</span> <span class="n">drop_list</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="s2">&quot;.tscn&quot;</span><span class="p">)</span>
+        <span class="n">instance_scene</span><span class="p">(</span><span class="nb">load</span><span class="p">(</span><span class="n">scene</span><span class="p">))</span>
+
+<span class="k">func</span> <span class="n">screen_change_started</span><span class="p">():</span>
+    <span class="n">set_physics_process</span><span class="p">(</span><span class="bp">false</span><span class="p">)</span>
+
+    <span class="c1"># if the entity is an entity and no longer on camera then reset it</span>
+    <span class="k">if</span> <span class="n">TYPE</span> <span class="o">==</span> <span class="s2">&quot;ENEMY&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="o">!</span><span class="n">camera</span><span class="o">.</span><span class="n">camera_rect</span><span class="o">.</span><span class="n">has_point</span><span class="p">(</span><span class="n">position</span><span class="p">):</span>
+            <span class="n">reset</span><span class="p">()</span>
+
+<span class="k">func</span> <span class="n">screen_change_completed</span><span class="p">():</span>
+    <span class="n">set_physics_process</span><span class="p">(</span><span class="bp">true</span><span class="p">)</span>
+
+    <span class="c1"># If the entity is an enemy and not on camera don&#39;t run physics_process</span>
+    <span class="k">if</span> <span class="n">TYPE</span> <span class="o">==</span> <span class="s2">&quot;ENEMY&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="o">!</span><span class="n">camera</span><span class="o">.</span><span class="n">camera_rect</span><span class="o">.</span><span class="n">has_point</span><span class="p">(</span><span class="n">position</span><span class="p">):</span>
+            <span class="n">set_physics_process</span><span class="p">(</span><span class="bp">false</span><span class="p">)</span>
+
+<span class="c1"># creates a new identical entity with it&#39;s original position</span>
+<span class="c1"># deletes the current entity</span>
+<span class="c1"># this also resets health</span>
+<span class="k">func</span> <span class="n">reset</span><span class="p">():</span>
+    <span class="k">var</span> <span class="n">new_instance</span> <span class="o">=</span> <span class="nb">load</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span><span class="o">.</span><span class="n">instance</span><span class="p">()</span>
+    <span class="n">get_parent</span><span class="p">()</span><span class="o">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">new_instance</span><span class="p">)</span>
+    <span class="n">new_instance</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="n">home_position</span>
+    <span class="n">new_instance</span><span class="o">.</span><span class="n">home_position</span> <span class="o">=</span> <span class="n">home_position</span>
+    <span class="n">new_instance</span><span class="o">.</span><span class="n">set_physics_process</span><span class="p">(</span><span class="bp">false</span><span class="p">)</span>
+    <span class="n">queue_free</span><span class="p">()</span>
+
+<span class="c1"># With the way we handle item drops, we don&#39;t want to have the total</span>
+<span class="c1"># number get too big.  This keeps it below or around 100.</span>
+<span class="k">func</span> <span class="n">normalize_item_drop_weights</span><span class="p">():</span>
+    <span class="k">var</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="c1"># force multiplier to be a float</span>
+    <span class="k">var</span> <span class="n">multiplier</span> <span class="o">=</span> <span class="mf">1.0</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">ITEM_DROP_WEIGHTS</span><span class="p">:</span>
+        <span class="n">sum</span> <span class="o">+=</span> <span class="nb">round</span><span class="p">(</span><span class="n">ITEM_DROP_WEIGHTS</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+    <span class="c1"># if our sum is greater than 100 then we want then find the</span>
+    <span class="c1"># multiplier that will bring it close to 100</span>
+    <span class="k">if</span> <span class="n">sum</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+        <span class="n">multiplier</span> <span class="o">=</span> <span class="mi">100</span><span class="o">/</span><span class="n">sum</span>
+
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">ITEM_DROP_WEIGHTS</span><span class="p">:</span>
+        <span class="c1"># First do the multiplier</span>
+        <span class="n">ITEM_DROP_WEIGHTS</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">multiplier</span> <span class="o">*</span> <span class="nb nb-Type">float</span><span class="p">(</span><span class="n">ITEM_DROP_WEIGHTS</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+        <span class="c1"># if rounding it will make it zero (i.e. it was .4) then make it 1</span>
+        <span class="k">if</span> <span class="n">ITEM_DROP_WEIGHTS</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nb">round</span><span class="p">(</span><span class="n">ITEM_DROP_WEIGHTS</span><span class="p">[</span><span class="n">key</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">ITEM_DROP_WEIGHTS</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ITEM_DROP_WEIGHTS</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">ITEM_DROP_WEIGHTS</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+
+
+<span class="c1"># put into helper script pls</span>
+<span class="k">static</span> <span class="k">func</span> <span class="n">rand_direction</span><span class="p">():</span>
+    <span class="k">var</span> <span class="n">new_direction</span> <span class="o">=</span> <span class="nb">randi</span><span class="p">()</span> <span class="o">%</span> <span class="mi">4</span>
+    <span class="k">match</span> <span class="n">new_direction</span><span class="p">:</span>
+        <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb nb-Type">Vector2</span><span class="o">.</span><span class="n">LEFT</span>
+        <span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb nb-Type">Vector2</span><span class="o">.</span><span class="n">RIGHT</span>
+        <span class="mi">2</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb nb-Type">Vector2</span><span class="o">.</span><span class="n">UP</span>
+        <span class="mi">3</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb nb-Type">Vector2</span><span class="o">.</span><span class="n">DOWN</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Lisabeth Lueninghoener.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

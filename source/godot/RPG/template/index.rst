@@ -22,6 +22,8 @@ In the next few chapters we'll cover how some of the mechanics work.
 
    1: Camera<1-camera>
    2: Save Game<2-save-game>
+   3: Entity Class<3-entity>
+   4: Enemy Drops<4-enemy-drops>
 
 
 

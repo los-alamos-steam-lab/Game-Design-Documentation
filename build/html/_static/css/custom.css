@@ -1,3 +1,8 @@
+html {
+    scroll-padding-top: 75px;
+    /* height of sticky header */
+}
+
 .wy-nav-side {
     color: #9b9b9b;
     background: #6200ad;

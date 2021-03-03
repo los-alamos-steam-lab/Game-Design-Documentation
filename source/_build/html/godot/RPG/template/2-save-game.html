@@ -405,10 +405,9 @@ converted to json and written as a single line in the file.</p></li>
 </div>
 <div class="section" id="loading">
 <h3>Loading<a class="headerlink" href="#loading" title="Permalink to this headline">¶</a></h3>
-<p>When the game starts we load the save game.  Note that in <a class="reference internal" href="#main-ready">Main._ready()</a> we
-make use of yield(get_tree(), “idle_frame”) in order to prevent race
-conditions involved in order to prevent race conditions. After the first yield,
-call <a class="reference internal" href="#main-load-game">Main.load_game()</a></p>
+<p>When the game starts we load the save game.</p>
+<p>Note that in <a class="reference internal" href="#main-ready">Main._ready()</a> we make use of yield(get_tree(), “idle_frame”)
+in order to prevent race conditions. After the first yield, call <a class="reference internal" href="#main-load-game">Main.load_game()</a></p>
 <ul class="simple">
 <li><p>If there’s no save file, leave.</p></li>
 <li><p>Get all of the nodes in group ‘persist’.  If they’re not the player and
@@ -434,8 +433,8 @@ the player position, so we wanted to wait until the end.</p></li>
 <div class="section" id="id1">
 <h3>Saving<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Map Areas are saved during screen changes via Main.save_game() and teleports
-before they are deleted.  There save routines are very similar to the last stage
-of Main.save_game().</p>
+before they are deleted.</p>
+<p>These save routines are very similar to the last stage of Main.save_game().</p>
 <ul class="simple">
 <li><p>Go through all of nodes in group ‘persist.  If they are not empty,
 have the current scene as their parent, and have a save method,
@@ -457,27 +456,24 @@ converted to json and written as a single line in the file.</p></li>
 </div>
 <div class="section" id="id2">
 <h3>Loading<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<p>When the game starts we load the save game.  Note that in <a class="reference internal" href="#main-ready">Main._ready()</a> we
+<p>Map Areas are loaded when the scene is loaded (usually when the game loads
+or the player teleports.</p>
+<p>Note that in <a class="reference internal" href="#maparea-ready">maparea._ready()</a> we
 make use of yield(get_tree(), “idle_frame”) in order to prevent race
-conditions involved in order to prevent race conditions. After the first yield,
-call <a class="reference internal" href="#main-load-game">Main.load_game()</a></p>
+conditions. We need the object placer to finish loading scenes before we delete
+them. After the yield, call <a class="reference internal" href="#maparea-load-maparea">maparea.load_maparea()</a>.</p>
+<p>These load routines are very similar to the last stage of Main.save_game().</p>
 <ul class="simple">
 <li><p>If there’s no save file, leave.</p></li>
-<li><p>Get all of the nodes in group ‘persist’.  If they’re not the player and
-have a save game, then delete them.  Basically, if we didn’t save them it is
+<li><p>Get all of the nodes in group ‘persist’.  If they have the current map area as
+a parent, delete them.  Basically, if we didn’t save them it is
 because the player destroyed them (enemies and locked doors) or picked them up
 (keys).  If we did save them, we’ll load them in a moment.</p></li>
 <li><p>Open the save game and read it line by line.</p></li>
 <li><p>If it is empty, ignore it.</p></li>
-<li><p>If it is for the player, call Player.load_dict()</p></li>
-<li><p>If it is for the current file (Main) save the line.  We’ll get to it at the
-end.</p></li>
 <li><p>Otherwise, load the new scene and set its position. If it has a load_dict()
 call it, otherwise assume each dictionary key has a corresponding variable
 and just assign it.</p></li>
-<li><p>If we saved the data for the current file (Main) load it now.  This can overwrite
-the player position, so we wanted to wait until the end.</p></li>
-<li><p>If the initial_area_path was set, then load the current_area.</p></li>
 </ul>
 </div>
 </div>
@@ -648,6 +644,17 @@ the player position, so we wanted to wait until the end.</p></li>
 </pre></div>
 </div>
 </div>
+<div class="section" id="maparea-ready">
+<h3>maparea._ready()<a class="headerlink" href="#maparea-ready" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">func</span> <span class="n">_ready</span><span class="p">():</span>
+    <span class="n">SAVE_FILE</span> <span class="o">=</span> <span class="s2">&quot;res://&quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;.json&quot;</span>
+    <span class="c1"># yield is need to allow the scene to finish loading</span>
+    <span class="c1"># before loading the savefile.</span>
+    <span class="nb">yield</span><span class="p">(</span><span class="n">get_tree</span><span class="p">(),</span> <span class="s2">&quot;idle_frame&quot;</span><span class="p">)</span>
+    <span class="n">load_maparea</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="maparea-load-maparea">
 <h3>maparea.load_maparea()<a class="headerlink" href="#maparea-load-maparea" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">func</span> <span class="n">load_maparea</span><span class="p">():</span>
@@ -681,10 +688,13 @@ the player position, so we wanted to wait until the end.</p></li>
         <span class="n">new_object</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="nb nb-Type">Vector2</span><span class="p">(</span><span class="n">node_data</span><span class="p">[</span><span class="s2">&quot;pos_x&quot;</span><span class="p">],</span> <span class="n">node_data</span><span class="p">[</span><span class="s2">&quot;pos_y&quot;</span><span class="p">])</span>
 
         <span class="c1"># Now we set the remaining variables.</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">node_data</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&quot;filename&quot;</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&quot;parent&quot;</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&quot;pos_x&quot;</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&quot;pos_y&quot;</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&quot;direction_x&quot;</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&quot;direction_y&quot;</span><span class="p">:</span>
-                <span class="k">continue</span>
-            <span class="n">new_object</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">node_data</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">new_object</span><span class="o">.</span><span class="n">has_method</span><span class="p">(</span><span class="s2">&quot;load_dict&quot;</span><span class="p">):</span>
+            <span class="n">new_object</span><span class="o">.</span><span class="n">load_dict</span><span class="p">(</span><span class="n">node_data</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">node_data</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&quot;filename&quot;</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&quot;parent&quot;</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&quot;pos_x&quot;</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&quot;pos_y&quot;</span><span class="p">:</span>
+                    <span class="k">continue</span>
+                <span class="n">new_object</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">node_data</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 
     <span class="n">save_game</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>

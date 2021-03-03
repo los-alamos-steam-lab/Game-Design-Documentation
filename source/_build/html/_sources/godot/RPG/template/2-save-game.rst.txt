@@ -41,10 +41,10 @@ When a screen change is started, `Main.save_game()`_ is called.
 Loading 
 ^^^^^^^^^
 
-When the game starts we load the save game.  Note that in `Main._ready()`_ we 
-make use of yield(get_tree(), "idle_frame") in order to prevent race 
-conditions involved in order to prevent race conditions. After the first yield, 
-call `Main.load_game()`_
+When the game starts we load the save game.  
+
+Note that in `Main._ready()`_ we make use of yield(get_tree(), "idle_frame") 
+in order to prevent race conditions. After the first yield, call `Main.load_game()`_
 
 * If there's no save file, leave.
 * Get all of the nodes in group 'persist'.  If they're not the player and 
@@ -70,8 +70,9 @@ Saving
 ^^^^^^^^^^
 
 Map Areas are saved during screen changes via Main.save_game() and teleports
-before they are deleted.  There save routines are very similar to the last stage
-of Main.save_game().
+before they are deleted.  
+
+These save routines are very similar to the last stage of Main.save_game().
 
 * Go through all of nodes in group 'persist.  If they are not empty, 
   have the current scene as their parent, and have a save method, 
@@ -89,27 +90,26 @@ of Main.save_game().
 Loading 
 ^^^^^^^^^
 
-When the game starts we load the save game.  Note that in `Main._ready()`_ we 
+Map Areas are loaded when the scene is loaded (usually when the game loads 
+or the player teleports.  
+
+Note that in `maparea._ready()`_ we 
 make use of yield(get_tree(), "idle_frame") in order to prevent race 
-conditions involved in order to prevent race conditions. After the first yield, 
-call `Main.load_game()`_
+conditions. We need the object placer to finish loading scenes before we delete
+them. After the yield, call `maparea.load_maparea()`_. 
+
+These load routines are very similar to the last stage of Main.save_game().
 
 * If there's no save file, leave.
-* Get all of the nodes in group 'persist'.  If they're not the player and 
-  have a save game, then delete them.  Basically, if we didn't save them it is
+* Get all of the nodes in group 'persist'.  If they have the current map area as
+  a parent, delete them.  Basically, if we didn't save them it is
   because the player destroyed them (enemies and locked doors) or picked them up 
   (keys).  If we did save them, we'll load them in a moment.
 * Open the save game and read it line by line.
 * If it is empty, ignore it.
-* If it is for the player, call Player.load_dict()
-* If it is for the current file (Main) save the line.  We'll get to it at the
-  end.
 * Otherwise, load the new scene and set its position. If it has a load_dict()
   call it, otherwise assume each dictionary key has a corresponding variable 
   and just assign it.
-* If we saved the data for the current file (Main) load it now.  This can overwrite 
-  the player position, so we wanted to wait until the end.  
-* If the initial_area_path was set, then load the current_area.
 
 Code 
 --------
@@ -286,6 +286,18 @@ maparea.save_maparea()
         save_game.close()
 
 
+maparea._ready()
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: gdscript
+
+    func _ready():
+        SAVE_FILE = "res://" + name + ".json"
+        # yield is need to allow the scene to finish loading
+        # before loading the savefile.
+        yield(get_tree(), "idle_frame")
+        load_maparea()
+
 
 maparea.load_maparea()
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -323,10 +335,13 @@ maparea.load_maparea()
             new_object.position = Vector2(node_data["pos_x"], node_data["pos_y"])
             
             # Now we set the remaining variables.
-            for i in node_data.keys():
-                if i == "filename" or i == "parent" or i == "pos_x" or i == "pos_y" or i == "direction_x" or i == "direction_y":
-                    continue
-                new_object.set(i, node_data[i])
+            if new_object.has_method("load_dict"):
+                new_object.load_dict(node_data)
+            else:
+                for i in node_data.keys():
+                    if i == "filename" or i == "parent" or i == "pos_x" or i == "pos_y":
+                        continue
+                    new_object.set(i, node_data[i])
         
         save_game.close()
 
