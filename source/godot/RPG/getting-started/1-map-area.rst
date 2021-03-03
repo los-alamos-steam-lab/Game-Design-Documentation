@@ -1,5 +1,5 @@
-Creating your First Map Area
-=======================================
+Godot RPG: Creating a New Map Area
+================================================
 
 
 Introduction

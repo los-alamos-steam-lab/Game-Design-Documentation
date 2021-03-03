@@ -21,6 +21,7 @@ In the next few chapters we'll cover how some of the mechanics work.
    :caption: Lessons:
 
    1: Camera<1-camera>
+   2: Save Game<2-save-game>
 
 
 
