@@ -16,6 +16,7 @@ element, as it tracks all of the details that need to be set and reset.
 
    1: Making a New Map Area<1-map-area>
    2: Creating a New Enemy<2-enemy>
+   3: Creating a New Item<3-item>
 
 
 

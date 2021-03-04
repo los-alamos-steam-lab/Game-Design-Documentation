@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Godot Template: Teleporting &mdash; Game Design 0.1 documentation</title>
+  <title>Godot Template: Item Class &mdash; Game Design 0.1 documentation</title>
   
 
   
@@ -42,8 +42,8 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Godot Template: Item Class" href="6-item.html" />
-    <link rel="prev" title="Godot Template: Enemy Drops" href="4-enemy-drops.html" /> 
+    <link rel="next" title="Top Down RPG: Making it Your Own" href="../getting-started/index.html" />
+    <link rel="prev" title="Godot Template: Teleporting" href="5-teleport.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -274,19 +274,19 @@
 <li class="toctree-l4"><a class="reference internal" href="4-enemy-drops.html#id1">Code</a></li>
 </ul>
 </li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Teleporting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="5-teleport.html">Teleporting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="5-teleport.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="5-teleport.html#scene-tree">Scene Tree</a></li>
+<li class="toctree-l4"><a class="reference internal" href="5-teleport.html#exports">Exports</a></li>
+<li class="toctree-l4"><a class="reference internal" href="5-teleport.html#how-it-works">How it Works</a></li>
+<li class="toctree-l4"><a class="reference internal" href="5-teleport.html#code">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Items (Weapons)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#scene-tree">Scene Tree</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#exports">Exports</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#how-it-works">How it Works</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#code">Code</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="6-item.html">Items (Weapons)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="6-item.html#overview">Overview</a></li>
-<li class="toctree-l4"><a class="reference internal" href="6-item.html#scene-tree">Scene Tree</a></li>
-<li class="toctree-l4"><a class="reference internal" href="6-item.html#exports">Exports</a></li>
-<li class="toctree-l4"><a class="reference internal" href="6-item.html#code">Code</a></li>
 </ul>
 </li>
 </ul>
@@ -393,13 +393,13 @@
         
           <li><a href="index.html">Top Down RPG: Template</a> &raquo;</li>
         
-      <li>Godot Template: Teleporting</li>
+      <li>Godot Template: Item Class</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../../_sources/godot/RPG/template/5-teleport.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../_sources/godot/RPG/template/6-item.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -412,21 +412,30 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="godot-template-teleporting">
-<h1>Godot Template: Teleporting<a class="headerlink" href="#godot-template-teleporting" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="godot-template-item-class">
+<h1>Godot Template: Item Class<a class="headerlink" href="#godot-template-item-class" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p>The teleport scene allows the player to transition from one map area
-to another, or to jump around within a single map area.  The code by itself
-can be reused for doorways into and out of houses and other similar transistions.</p>
+<p>Items are created independent of the Player, so that they can also be used by
+enemies and other entities. Items are instanced and made children of the entity
+in Entity.use_item() (more detail in the <a class="reference internal" href="3-entity.html"><span class="doc">Entity Class</span></a>)</p>
 </div>
 <div class="section" id="scene-tree">
 <h2>Scene Tree<a class="headerlink" href="#scene-tree" title="Permalink to this headline">¶</a></h2>
+<p>Item is a class and not a scene, but it relies on its instances having this tree structure.
+Names not in quotes should not be changed.</p>
 <ul class="simple">
 <li><dl class="simple">
-<dt>teleport is type Area2D</dt><dd><ul>
+<dt>“Name” is type Item</dt><dd><ul>
+<li><p>[optional] AnimationPlayer is type AnimationPlayer</p></li>
 <li><p>Sprite is type Sprite</p></li>
+<li><dl class="simple">
+<dt>Hitbox is type Area2D</dt><dd><ul>
 <li><p>CollisionShape2D is type CollisionShape2D</p></li>
+</ul>
+</dd>
+</dl>
+</li>
 </ul>
 </dd>
 </dl>
@@ -435,82 +444,50 @@ can be reused for doorways into and out of houses and other similar transistions
 </div>
 <div class="section" id="exports">
 <h2>Exports<a class="headerlink" href="#exports" title="Permalink to this headline">¶</a></h2>
-<p>Because of these exports, teleports cannot be placed using the
-object placer, but must be placed directly into the map area.</p>
 <ul class="simple">
 <li><dl class="simple">
-<dt>dest_scene</dt><dd><ul>
-<li><p>FILE: The scene that the player will teleport to.</p></li>
+<dt>DAMAGE</dt><dd><ul>
+<li><p>The amount the item harms an entity of a different type</p></li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>dest_position</dt><dd><ul>
-<li><p>Vector2: The new player position.</p></li>
+<dt>MAX_AMOUNT</dt><dd><ul>
+<li><p>The maximum number of the item that a single entity can have spawned at a time</p></li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>dest_spritedir</dt><dd><ul>
-<li><p>STRING Enum: The direction the player should face.</p></li>
+<dt>delete_on_hit</dt><dd><ul>
+<li><p>Signals whether the item should be deleted when it hits an entity of a different type</p></li>
 </ul>
 </dd>
 </dl>
 </li>
 </ul>
-</div>
-<div class="section" id="how-it-works">
-<h2>How it Works<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
-<p>When the player enters the teleport tile, it triggers <a class="reference internal" href="#main-teleport">Main.teleport()</a>
-which:</p>
-<ul class="simple">
-<li><p>Pauses the tree</p></li>
-<li><p>Saves the current area and deletes it.</p></li>
-<li><p>Loads the new area and sets the player position and direction</p></li>
-<li><p>Unpauses the tree</p></li>
-</ul>
-<p>Main.teleport() can be used by other scripts (such as a door) as well.</p>
 </div>
 <div class="section" id="code">
 <h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="teleport-gd">
-<h3>teleport.gd<a class="headerlink" href="#teleport-gd" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">extends</span> <span class="n">Area2D</span>
+<p>The code is very basic on this and simply sets up the exports, assigns the item the same
+TYPE as its parent and puts it in the item group.</p>
+<div class="section" id="item-gd">
+<h3>item.gd<a class="headerlink" href="#item-gd" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">var</span> <span class="n">TYPE</span> <span class="o">=</span> <span class="nb nb-Type">null</span>
 
-<span class="k">export</span><span class="p">(</span><span class="nb nb-Type">String</span><span class="p">,</span> <span class="n">FILE</span><span class="p">)</span> <span class="k">var</span> <span class="n">dest_scene</span>
-<span class="k">export</span><span class="p">(</span><span class="nb nb-Type">Vector2</span><span class="p">)</span> <span class="k">var</span> <span class="n">dest_position</span>
-<span class="k">export</span><span class="p">(</span><span class="nb nb-Type">String</span><span class="p">,</span> <span class="s2">&quot;Up&quot;</span><span class="p">,</span> <span class="s2">&quot;Down&quot;</span><span class="p">,</span> <span class="s2">&quot;Left&quot;</span><span class="p">,</span> <span class="s2">&quot;Right&quot;</span><span class="p">)</span>       <span class="k">var</span>  <span class="n">dest_spritedir</span> <span class="o">=</span> <span class="s2">&quot;Down&quot;</span>
+<span class="c1"># input is set in entity.use_item()</span>
+<span class="k">var</span> <span class="n">input</span> <span class="o">=</span> <span class="nb nb-Type">null</span>
 
-<span class="k">var</span> <span class="n">main_scene</span>  <span class="p">:</span><span class="o">=</span> <span class="s2">&quot;/root/Main&quot;</span>
+<span class="c1"># These are settable in the inspector</span>
+<span class="c1"># (float, min, max, interval)</span>
+<span class="k">export</span><span class="p">(</span><span class="nb nb-Type">float</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span> <span class="k">var</span>               <span class="n">DAMAGE</span>                  <span class="o">=</span> <span class="mf">0.5</span>
+<span class="k">export</span><span class="p">(</span><span class="nb nb-Type">int</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span> <span class="k">var</span>                      <span class="n">MAX_AMOUNT</span>              <span class="o">=</span> <span class="mi">1</span>
+<span class="k">export</span><span class="p">(</span><span class="nb nb-Type">bool</span><span class="p">)</span> <span class="k">var</span>                            <span class="n">delete_on_hit</span>   <span class="o">=</span> <span class="bp">false</span>
 
-<span class="c1"># Called when the node enters the scene tree for the first time.</span>
 <span class="k">func</span> <span class="n">_ready</span><span class="p">():</span>
-    <span class="n">connect</span><span class="p">(</span><span class="s2">&quot;body_entered&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;body_entered&quot;</span><span class="p">)</span>
-
-<span class="k">func</span> <span class="n">body_entered</span><span class="p">(</span><span class="n">body</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">body</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;Player&quot;</span><span class="p">:</span>
-        <span class="c1"># Pickup the key and then delete it.</span>
-        <span class="n">get_node</span><span class="p">(</span><span class="n">main_scene</span><span class="p">)</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s2">&quot;teleport&quot;</span><span class="p">,</span> <span class="n">dest_scene</span><span class="p">,</span> <span class="n">dest_position</span><span class="p">,</span> <span class="n">dest_spritedir</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="main-teleport">
-<h3>Main.teleport()<a class="headerlink" href="#main-teleport" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">func</span> <span class="n">teleport</span><span class="p">(</span><span class="n">new_scene_path</span><span class="p">,</span> <span class="n">new_position</span><span class="p">,</span> <span class="n">new_spritedir</span><span class="p">):</span>
-    <span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">paused</span> <span class="o">=</span> <span class="bp">true</span>
-    <span class="k">if</span> <span class="n">current_area</span><span class="p">:</span>
-        <span class="n">current_area</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s2">&quot;save_maparea&quot;</span><span class="p">)</span>
-        <span class="n">current_area</span><span class="o">.</span><span class="n">queue_free</span><span class="p">()</span>
-        <span class="nb">yield</span><span class="p">(</span><span class="n">current_area</span><span class="p">,</span> <span class="s2">&quot;tree_exited&quot;</span><span class="p">)</span>
-
-    <span class="k">var</span> <span class="n">new_area</span> <span class="o">=</span> <span class="n">instance_area</span><span class="p">(</span><span class="n">new_scene_path</span><span class="p">)</span>
-    <span class="n">player</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="n">new_position</span>
-    <span class="n">player</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;default&quot;</span>
-    <span class="n">current_area</span> <span class="o">=</span> <span class="n">new_area</span>
-    <span class="n">player</span><span class="o">.</span><span class="n">spritedir</span> <span class="o">=</span> <span class="n">new_spritedir</span>
-    <span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">paused</span> <span class="o">=</span> <span class="bp">false</span>
+    <span class="n">TYPE</span> <span class="o">=</span> <span class="n">get_parent</span><span class="p">()</span><span class="o">.</span><span class="n">TYPE</span>
+    <span class="n">add_to_group</span><span class="p">(</span><span class="s2">&quot;item&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -523,8 +500,8 @@ which:</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="6-item.html" class="btn btn-neutral float-right" title="Godot Template: Item Class" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="4-enemy-drops.html" class="btn btn-neutral float-left" title="Godot Template: Enemy Drops" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../getting-started/index.html" class="btn btn-neutral float-right" title="Top Down RPG: Making it Your Own" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="5-teleport.html" class="btn btn-neutral float-left" title="Godot Template: Teleporting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

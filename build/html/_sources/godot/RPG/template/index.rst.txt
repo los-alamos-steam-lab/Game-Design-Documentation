@@ -25,6 +25,7 @@ In the next few chapters we'll cover how some of the mechanics work.
    Entity Class<3-entity>
    Enemy Drops<4-enemy-drops>
    Teleporting<5-teleport>
+   Items (Weapons)<6-item>
 
 
 
