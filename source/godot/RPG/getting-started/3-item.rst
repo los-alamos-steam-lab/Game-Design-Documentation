@@ -49,7 +49,7 @@ the animation, connect signals, play sounds, and set the entity state.  An examp
 below.  Again, this will serve a slightly different function for something like a bow.  We may 
 even just pass it.
 
-.. code_block:: gdscript
+.. code-block:: gdscript
 
     func start():
         anim.connect("animation_finished", self, "destroy")
