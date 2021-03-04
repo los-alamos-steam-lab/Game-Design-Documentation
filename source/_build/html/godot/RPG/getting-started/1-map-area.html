@@ -248,11 +248,37 @@
 <li class="toctree-l4"><a class="reference internal" href="../template/1-camera.html#code">Code</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../template/2-save-game.html">2: Save Game</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../template/2-save-game.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../template/2-save-game.html#main-scene">Main Scene</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../template/2-save-game.html#map-areas">Map Areas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../template/2-save-game.html#code">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../template/3-entity.html">3: Entity Class</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../template/3-entity.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../template/3-entity.html#scene-tree">Scene Tree</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../template/3-entity.html#exports">Exports</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../template/3-entity.html#ready">_ready()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../template/3-entity.html#loops">Loops</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../template/3-entity.html#use-item">Use item</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../template/3-entity.html#code">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../template/4-enemy-drops.html">4: Enemy Drops</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../template/4-enemy-drops.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../template/4-enemy-drops.html#exports">Exports</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../template/4-enemy-drops.html#normalization">Normalization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../template/4-enemy-drops.html#enemy-death">Enemy Death</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../template/4-enemy-drops.html#code">Code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../template/4-enemy-drops.html#id1">Code</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Top Down RPG: Making it Your Own</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">1: Making a New Map Area</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#drawing-the-scene">Drawing the Scene</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#placing-items-and-entities">Placing Items and Entities</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#playing-the-scene">Playing the Scene</a></li>
@@ -358,8 +384,8 @@
             
   <div class="section" id="godot-rpg-creating-a-new-map-area">
 <h1>Godot RPG: Creating a New Map Area<a class="headerlink" href="#godot-rpg-creating-a-new-map-area" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>Creating your own area is a good start to making the game your own.
 Even if it is a very simple test area, it will help get you started with
 the rest of the game, as it will define the size of your tilesets.</p>
@@ -370,7 +396,9 @@ the rest of the game, as it will define the size of your tilesets.</p>
 <li><p>Learn more about how to create your own tilesets and tilemaps in Godot here.</p></li>
 <li><p>You’ll aslo want to set your Window size to match your new aesthetic
 (Project Settings -&gt; General -&gt; Display -&gt; Window )</p></li>
-<li><p>Set the Camera Screen Size to match (Main Scene -&gt; Camera -&gt; Inspector)</p></li>
+<li><p>Set the Camera Screen Size to match (Main Scene -&gt; Camera -&gt; Inspector) or make sure
+it is set to Vector2.ZERO to have the game set it for you.</p></li>
+<li><p>Update your player and entity speeds to match the tilesize in their inspectors.</p></li>
 </ul>
 </div>
 <div class="section" id="placing-items-and-entities">

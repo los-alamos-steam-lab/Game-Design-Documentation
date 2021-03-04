@@ -20,10 +20,11 @@ In the next few chapters we'll cover how some of the mechanics work.
    :maxdepth: 2
    :caption: Lessons:
 
-   1: Camera<1-camera>
-   2: Save Game<2-save-game>
-   3: Entity Class<3-entity>
-   4: Enemy Drops<4-enemy-drops>
+   Camera<1-camera>
+   Save Game<2-save-game>
+   Entity Class<3-entity>
+   Enemy Drops<4-enemy-drops>
+   Teleporting<5-teleport>
 
 
 

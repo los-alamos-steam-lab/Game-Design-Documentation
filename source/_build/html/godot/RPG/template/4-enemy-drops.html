@@ -41,7 +41,9 @@
 
     
     <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../search.html" /> 
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Top Down RPG: Making it Your Own" href="../getting-started/index.html" />
+    <link rel="prev" title="Godot Template: Entity Class" href="3-entity.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -140,8 +142,8 @@
 
         
 <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../godot.html">Godot Game Engine</a><ul>
+          <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../godot.html">Godot Game Engine</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../getting-started.html">Getting Started with Godot</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../getting-started.html#introduction">Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../getting-started.html#downloading">Downloading</a></li>
@@ -237,7 +239,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="index.html">Top Down RPG: Template</a><ul>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Top Down RPG: Template</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="1-camera.html">1: Camera</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="1-camera.html#overview">Overview</a></li>
 <li class="toctree-l4"><a class="reference internal" href="1-camera.html#scene-tree">Scene Tree</a></li>
@@ -253,11 +255,30 @@
 <li class="toctree-l4"><a class="reference internal" href="2-save-game.html#code">Code</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="3-entity.html">3: Entity Class</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="3-entity.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="3-entity.html#scene-tree">Scene Tree</a></li>
+<li class="toctree-l4"><a class="reference internal" href="3-entity.html#exports">Exports</a></li>
+<li class="toctree-l4"><a class="reference internal" href="3-entity.html#ready">_ready()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="3-entity.html#loops">Loops</a></li>
+<li class="toctree-l4"><a class="reference internal" href="3-entity.html#use-item">Use item</a></li>
+<li class="toctree-l4"><a class="reference internal" href="3-entity.html#code">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4: Enemy Drops</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exports">Exports</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#normalization">Normalization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enemy-death">Enemy Death</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#code">Code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Code</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../getting-started/index.html">Top Down RPG: Making it Your Own</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../getting-started/1-map-area.html">1: Making a New Map Area</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../getting-started/1-map-area.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../getting-started/1-map-area.html#overview">Overview</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../getting-started/1-map-area.html#drawing-the-scene">Drawing the Scene</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../getting-started/1-map-area.html#placing-items-and-entities">Placing Items and Entities</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../getting-started/1-map-area.html#playing-the-scene">Playing the Scene</a></li>
@@ -338,6 +359,10 @@
     
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
+          <li><a href="../../godot.html">Godot Game Engine</a> &raquo;</li>
+        
+          <li><a href="index.html">Top Down RPG: Template</a> &raquo;</li>
+        
       <li>Godot Template: Enemy Drops</li>
     
     
@@ -392,7 +417,7 @@ we need to make sure our list does not end up ridiculously long.  <a class="refe
 tries to keep the total item weight under 100 and is run during Entity._ready()</p>
 <ul class="simple">
 <li><dl class="simple">
-<dt>Sum all of the weights</dt><dd><ul>
+<dt>Sum all of the weights.</dt><dd><ul>
 <li><p>We cannot force a dictionary export to be an integer, so we need to round them.</p></li>
 <li><p>This will fail if they are not at least numeric, we want it to.</p></li>
 </ul>
@@ -485,6 +510,10 @@ what, if anything, they drop and instances the drop scene.</p>
            
           </div>
           <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../getting-started/index.html" class="btn btn-neutral float-right" title="Top Down RPG: Making it Your Own" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="3-entity.html" class="btn btn-neutral float-left" title="Godot Template: Entity Class" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 

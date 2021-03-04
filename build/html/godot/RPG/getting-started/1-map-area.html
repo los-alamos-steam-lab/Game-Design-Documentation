@@ -42,7 +42,7 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Asset Creation" href="../../../assets/assets.html" />
+    <link rel="next" title="Godot RPG: Creating a New Enemy" href="2-enemy.html" />
     <link rel="prev" title="Top Down RPG: Making it Your Own" href="index.html" /> 
 </head>
 
@@ -240,7 +240,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../template/index.html">Top Down RPG: Template</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../template/1-camera.html">1: Camera</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../template/1-camera.html">Camera</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../template/1-camera.html#overview">Overview</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../template/1-camera.html#scene-tree">Scene Tree</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../template/1-camera.html#exports">Exports</a></li>
@@ -248,14 +248,14 @@
 <li class="toctree-l4"><a class="reference internal" href="../template/1-camera.html#code">Code</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../template/2-save-game.html">2: Save Game</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../template/2-save-game.html">Save Game</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../template/2-save-game.html#overview">Overview</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../template/2-save-game.html#main-scene">Main Scene</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../template/2-save-game.html#map-areas">Map Areas</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../template/2-save-game.html#code">Code</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../template/3-entity.html">3: Entity Class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../template/3-entity.html">Entity Class</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../template/3-entity.html#overview">Overview</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../template/3-entity.html#scene-tree">Scene Tree</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../template/3-entity.html#exports">Exports</a></li>
@@ -265,7 +265,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../template/3-entity.html#code">Code</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../template/4-enemy-drops.html">4: Enemy Drops</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../template/4-enemy-drops.html">Enemy Drops</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../template/4-enemy-drops.html#overview">Overview</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../template/4-enemy-drops.html#exports">Exports</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../template/4-enemy-drops.html#normalization">Normalization</a></li>
@@ -274,14 +274,30 @@
 <li class="toctree-l4"><a class="reference internal" href="../template/4-enemy-drops.html#id1">Code</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../template/5-teleport.html">Teleporting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../template/5-teleport.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../template/5-teleport.html#scene-tree">Scene Tree</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../template/5-teleport.html#exports">Exports</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../template/5-teleport.html#how-it-works">How it Works</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../template/5-teleport.html#code">Code</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Top Down RPG: Making it Your Own</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">1: Making a New Map Area</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#drawing-the-scene">Drawing the Scene</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#placing-items-and-entities">Placing Items and Entities</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#playing-the-scene">Playing the Scene</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="2-enemy.html">2: Creating a New Enemy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="2-enemy.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="2-enemy.html#creating-the-scene-tree">Creating the Scene Tree</a></li>
+<li class="toctree-l4"><a class="reference internal" href="2-enemy.html#exports">Exports</a></li>
+<li class="toctree-l4"><a class="reference internal" href="2-enemy.html#animation">Animation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="2-enemy.html#script">Script</a></li>
 </ul>
 </li>
 </ul>
@@ -384,8 +400,8 @@
             
   <div class="section" id="godot-rpg-creating-a-new-map-area">
 <h1>Godot RPG: Creating a New Map Area<a class="headerlink" href="#godot-rpg-creating-a-new-map-area" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>Creating your own area is a good start to making the game your own.
 Even if it is a very simple test area, it will help get you started with
 the rest of the game, as it will define the size of your tilesets.</p>
@@ -396,7 +412,9 @@ the rest of the game, as it will define the size of your tilesets.</p>
 <li><p>Learn more about how to create your own tilesets and tilemaps in Godot here.</p></li>
 <li><p>You’ll aslo want to set your Window size to match your new aesthetic
 (Project Settings -&gt; General -&gt; Display -&gt; Window )</p></li>
-<li><p>Set the Camera Screen Size to match (Main Scene -&gt; Camera -&gt; Inspector)</p></li>
+<li><p>Set the Camera Screen Size to match (Main Scene -&gt; Camera -&gt; Inspector) or make sure
+it is set to Vector2.ZERO to have the game set it for you.</p></li>
+<li><p>Update your player and entity speeds to match the tilesize in their inspectors.</p></li>
 </ul>
 </div>
 <div class="section" id="placing-items-and-entities">
@@ -457,7 +475,7 @@ inital_area_path of Main (Main -&gt; Inspector -&gt; Inital Area Path)</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../../../assets/assets.html" class="btn btn-neutral float-right" title="Asset Creation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="2-enemy.html" class="btn btn-neutral float-right" title="Godot RPG: Creating a New Enemy" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="index.html" class="btn btn-neutral float-left" title="Top Down RPG: Making it Your Own" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

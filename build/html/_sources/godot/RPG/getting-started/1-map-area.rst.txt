@@ -2,7 +2,7 @@ Godot RPG: Creating a New Map Area
 ================================================
 
 
-Introduction
+Overview
 ------------
 
 Creating your own area is a good start to making the game your own. 
@@ -15,7 +15,10 @@ Drawing the Scene
 * Learn more about how to create your own tilesets and tilemaps in Godot here. 
 * You'll aslo want to set your Window size to match your new aesthetic 
   (Project Settings -> General -> Display -> Window )
-* Set the Camera Screen Size to match (Main Scene -> Camera -> Inspector)
+* Set the Camera Screen Size to match (Main Scene -> Camera -> Inspector) or make sure
+  it is set to Vector2.ZERO to have the game set it for you.
+* Update your player and entity speeds to match the tilesize in their inspectors.
+
 
 Placing Items and Entities
 -----------------------------

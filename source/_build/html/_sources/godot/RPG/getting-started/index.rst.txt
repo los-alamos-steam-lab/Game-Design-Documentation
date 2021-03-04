@@ -15,6 +15,7 @@ element, as it tracks all of the details that need to be set and reset.
    :caption: Lessons:
 
    1: Making a New Map Area<1-map-area>
+   2: Creating a New Enemy<2-enemy>
 
 
 

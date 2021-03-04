@@ -24,7 +24,7 @@ Because items are randomly chosen by adding them to a list and picking one,
 we need to make sure our list does not end up ridiculously long.  `Entity.normalize_item_drop_weights()`_ 
 tries to keep the total item weight under 100 and is run during Entity._ready()
 
-* Sum all of the weights
+* Sum all of the weights.
     * We cannot force a dictionary export to be an integer, so we need to round them.
     * This will fail if they are not at least numeric, we want it to.
 * If the sum is greater than 100, then set our multiplier so that the sum would be 100.
