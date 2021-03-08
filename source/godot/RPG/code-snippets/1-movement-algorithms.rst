@@ -10,6 +10,9 @@ We'll want to add a few variables to the Entity Class as well:
 * movetimer: The current time remaining on the movetimer 
 
 
+RPG Snippets: Entity Movement
+================================
+
 Random Movement
 ---------------------
 This function allows for movement in up to 8 directions with a fixed or randomized movetimer.
