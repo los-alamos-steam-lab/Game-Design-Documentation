@@ -1,3 +1,7 @@
+RPG Snippets: Entity Movement
+===============================
+
+
 Setup
 ------------
 
@@ -9,9 +13,6 @@ We'll want to add a few variables to the Entity Class as well:
 * movetimer_range: An array of length 2.  The first element is minimum movetime and the second is max.
 * movetimer: The current time remaining on the movetimer 
 
-
-RPG Snippets: Entity Movement
-================================
 
 Random Movement
 ---------------------
