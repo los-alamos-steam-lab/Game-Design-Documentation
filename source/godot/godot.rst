@@ -9,6 +9,7 @@ Godot Game Engine
    RPG/lessons/index
    RPG/template/index
    RPG/getting-started/index
+   RPG/code-snippets/index
 
 
 
